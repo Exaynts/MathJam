@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My profile</title>
+
+    <link rel="icon" href="images/logo.ico" />
+    <link rel="import" href="header.html" />
+    <link rel="stylesheet" href="styles/header.css" />
+    <link rel="import" href="footer.html" />
+    <link rel="stylesheet" href="styles/footer.css" />
+    <link rel="stylesheet" href="styles/profile.css" />
+  </head>
+  <body>
+    <div id="header"></div>
+
+    <main class="main">
+      <aside class="aside">
+        <div class="back-to-menu">
+          <p>Back to menu</p>
+        </div>
+        <div class="buy-new-course">
+          <p>Buy new course</p>
+        </div>
+        <div class="faq">
+          <p>FAQ</p>
+        </div>
+      </aside>
+      <div class="main-content">
+        <section class="upper-menu">
+          <div class="search">
+            <form action="cources.html" method="GET">
+              <input
+                class="input-field"
+                type="text"
+                name="search"
+                placeholder="Search for courses"
+              />
+              <button type="submit" class="search-button">
+                <svg
+                  class="search-icon"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                >
+                  <!-- Значок лупы-->
+                  <path
+                    d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                  />
+                </svg>
+              </button>
+            </form>
+          </div>
+          <div class="nickname">
+            <p>Name</p>
+          </div>
+          <div class="avatar">
+            <div class="avatar-circle"></div>
+          </div>
+        </section>
+        <section class="courses">
+          <h1>My courses</h1>
+          <div class="course-name">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
+              veritatis, impedit distinctio aspernatur.
+            </p>
+          </div>
+          <div class="progress-bar"></div>
+          <div class="coutinue-button"></div>
+        </section>
+
+        <section class="data">
+          <div class="my-account">
+            <h1>My account</h1>
+            <div class="login">
+              <p class="data-text">Login</p>
+            </div>
+            <div class="e-mail">
+              <p class="data-text">E-mail</p>
+            </div>
+            <div class="password">
+              <p class="data-text">Password</p>
+            </div>
+            <div class="phone-number">
+              <p class="data-text">Phone number</p>
+            </div>
+          </div>
+          <div class="about-me">
+            <h1>About me</h1>
+            <div class="name">
+              <p class="data-text">Name</p>
+            </div>
+            <div class="date-of-birth">
+              <p class="data-text">Date of birth</p>
+            </div>
+            <div class="surname">
+              <p class="data-text">Surname</p>
+            </div>
+            <div class="sex">
+              <p class="data-text">Sex</p>
+            </div>
+            <div class="math-level">
+              <p class="data-text">Math level</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <div id="footer"></div>
+    <script src="js/header_and_footer.js"></script>
+  </body>
+</html>

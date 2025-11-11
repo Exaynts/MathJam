@@ -1,0 +1,25 @@
+/*footer styles*/
+.footer{
+    background-image: url("images/mirolla_header.png");
+    background-size: cover;
+    background-position: bottom;
+    background-color: #f55; 
+    color:#fff;
+    height: 250px;
+    text-align: center;
+}
+
+.footer h1{
+    color: white;  
+    font-size: 30px;  
+    padding-top: 40px;
+}
+
+.footer-text{
+    font-size: 30px; 
+    margin: auto;
+}
+.footer-author{
+    font-size: 24px; 
+    margin: auto;
+}

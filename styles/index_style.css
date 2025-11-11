@@ -1,0 +1,108 @@
+@font-face {
+  font-family: "Flamingo";
+  src: url("fonts/Flamingo-vnAYA.otf") format("opentype");
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+}
+
+body {
+  flex-direction: column;
+  color: #f55;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  color: hsl(0, 0%, 0%); /* Белый только для заголовков */
+}
+h1 {
+  margin: 0 0 80px;
+  font-size: 75px;
+}
+
+/*main styles*/
+.main {
+  position: relative;
+  padding: 20px 0 0;
+  color: #858585;
+}
+
+.main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0.3;
+  background-image: url("images/math_bg.PNG");
+  background-repeat: repeat;
+  background-position: top;
+  background-size: contain;
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 80%;
+  margin: 50px auto 0;
+}
+
+.intro-block {
+  color: #000;
+  font-weight: 500;
+  font-size: 40px;
+}
+.intro-text {
+  padding-left: 0;
+}
+.get-started {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 700px;
+  height: 250px;
+  margin: 30px 0 50px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  color: #000;
+  font-family: "Tahoma";
+  font-weight: 700;
+  font-size: 100px;
+  text-align: center;
+  text-decoration: underline;
+  background-color: #f55;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.get-started:hover {
+  color: rgb(0, 0, 0);
+  background-color: #f55;
+  filter: brightness(1.5);
+}
+.intro_image_container {
+  flex-shrink: 0;
+  margin-top: 20px;
+}
+
+.side-image {
+  width: 600px;
+  height: 540px;
+  border-radius: 25px;
+  object-fit: cover;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.promotion-phrase {
+  font-size: 30px;
+}
