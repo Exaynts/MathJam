@@ -1,3 +1,4 @@
+/* common styles */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -13,6 +14,7 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: white;
 }
+
 .main {
   display: flex;
   flex-direction: row;
@@ -34,13 +36,16 @@ h2,
 h3,
 h4,
 p {
-  color: hsl(0, 0%, 0%); /* Белый только для заголовков */
+  color: hsl(0, 0%, 0%);
   font-size: 24px;
 }
+
 h1 {
   font-size: 75px;
+  margin-bottom: 20px;
 }
 
+/* aside styles */
 .aside {
   display: flex;
   flex-direction: column;
@@ -53,16 +58,16 @@ h1 {
 .back-to-menu {
   /**/
 }
-.buy-new-course {
-}
-.faq {
-}
 
+.buy-new-course {}
+
+.faq {}
+
+/* upper menu styles */
 .upper-menu {
-  /*grid-template-columns: 2fr 50% 2fr 1fr;*/
   display: flex;
   justify-content: center;
-  align-items: center; /* Выравнивание по центру по вертикали */
+  align-items: center;
   gap: 20px;
   width: 100%;
   height: 100px;
@@ -70,7 +75,7 @@ h1 {
   background-color: aqua;
 }
 
-/* Поиск */
+/*search bar*/
 .search {
   display: flex;
   flex: 6 1 0;
@@ -105,7 +110,7 @@ h1 {
   align-items: center;
   width: 30px;
   height: 30px;
-  margin-left: -45px; /* Сдвигаем кнопку поверх input */
+  margin-left: -45px;
   border: none;
   border-radius: 50%;
   background: none;
@@ -128,6 +133,7 @@ h1 {
   flex: 1 0 0;
   align-items: center;
 }
+
 .avatar {
   display: flex;
   flex: 1 0 0;
@@ -141,44 +147,132 @@ h1 {
   background-color: #f55;
 }
 
-.courses {
-}
-.course-name {
-}
-.progress-bar {
-}
-.coutinue-button {
+/* cources styles */
+.courses {}
+
+.course-name {}
+
+.progress-bar {}
+
+.coutinue-button {}
+
+/* data styles */
+.data {
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  gap: 40px;
 }
 
-.data {
+.data-text {}
+
+.my-account {
   display: flex;
   flex-direction: column;
 }
-.data-text {
-}
 
-.my-account {
+.account-grid {
   display: grid;
-}
-.login {
-}
-.e-mail {
-}
-.password {
-}
-.phone-number {
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 800px;
 }
 
 .about-me {
+  display: flex;
+  flex-direction: column;
+}
+
+/* data: grid styles */
+.about-grid {
   display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 800px;
 }
-.name {
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
-.date-of-birth {
+
+.grid-item label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+  font-size: 16px;
 }
-.surname {
+
+.grid-item input,
+.grid-item select {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+  background-color: white;
 }
-.sex {
+
+.grid-item input:focus,
+.grid-item select:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
 }
-.math-level {
+
+.grid-item input[type="date"] {
+  padding: 11px;
 }
+
+
+form {
+  max-width: none;
+  margin: 0;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* for mobile devices */
+@media (max-width: 768px) {
+  .account-grid,
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  h1 {
+    font-size: 50px;
+  }
+  
+  .main {
+    flex-direction: column;
+  }
+  
+  .aside {
+    max-width: 100%;
+    min-height: auto;
+  }
+}
+
+.login {}
+
+.e-mail {}
+
+.password {}
+
+.phone-number {}
+
+.name {}
+
+.date-of-birth {}
+
+.surname {}
+
+.sex {}
+
+.math-level {}

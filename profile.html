@@ -75,35 +75,58 @@
         <section class="data">
           <div class="my-account">
             <h1>My account</h1>
-            <div class="login">
-              <p class="data-text">Login</p>
-            </div>
-            <div class="e-mail">
-              <p class="data-text">E-mail</p>
-            </div>
-            <div class="password">
-              <p class="data-text">Password</p>
-            </div>
-            <div class="phone-number">
-              <p class="data-text">Phone number</p>
+            <div class="account-grid">
+              <div class="grid-item">
+                <label for="login">Login</label>
+                <input type="text" id="login" name="login" placeholder="Enter your login">
+              </div>
+              <div class="grid-item">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email">
+              </div>
+              <div class="grid-item">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password">
+              </div>
+              <div class="grid-item">
+                <label for="phone">Phone number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+              </div>
             </div>
           </div>
           <div class="about-me">
             <h1>About me</h1>
-            <div class="name">
-              <p class="data-text">Name</p>
-            </div>
-            <div class="date-of-birth">
-              <p class="data-text">Date of birth</p>
-            </div>
-            <div class="surname">
-              <p class="data-text">Surname</p>
-            </div>
-            <div class="sex">
-              <p class="data-text">Sex</p>
-            </div>
-            <div class="math-level">
-              <p class="data-text">Math level</p>
+            <div class="about-grid">
+              <div class="grid-item">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name">
+              </div>
+              <div class="grid-item">
+                <label for="surname">Surname</label>
+                <input type="text" id="surname" name="surname" placeholder="Enter your surname">
+              </div>
+              <div class="grid-item">
+                <label for="birthdate">Date of birth</label>
+                <input type="date" id="birthdate" name="birthdate">
+              </div>
+              <div class="grid-item">
+                <label for="sex">Sex</label>
+                <select id="sex" name="sex">
+                  <option value="">Select sex</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="grid-item">
+                <label for="math-level">Math level</label>
+                <select id="math-level" name="math-level">
+                  <option value="">Select math level</option>
+                  <option value="beginner">Beginner</option>
+                  <option value="intermediate">Intermediate</option>
+                  <option value="advanced">Advanced</option>
+                </select>
+              </div>
             </div>
           </div>
         </section>

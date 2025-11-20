@@ -33,6 +33,7 @@ h1 {
   position: relative;
   padding: 20px 0 0;
   color: #858585;
+  margin-top: var(--header-height);
 }
 
 .main::before {
