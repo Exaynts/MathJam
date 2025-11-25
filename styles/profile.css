@@ -72,7 +72,6 @@ h1 {
   width: 100%;
   height: 100px;
   padding: 0 20px;
-  background-color: aqua;
 }
 
 /*search bar*/
@@ -220,8 +219,7 @@ h1 {
 .grid-item input:focus,
 .grid-item select:focus {
   outline: none;
-  border-color: #4CAF50;
-  box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+
 }
 
 .grid-item input[type="date"] {
