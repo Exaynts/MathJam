@@ -25,19 +25,36 @@
             <p>Get Started</p>
           </div>
         </div>
-        <div class="intro-image-container">
-          <img
-            class="side-image"
-            src="images/student_learning.PNG"
-            alt="student_learning"
-          />
+        <!-- carousel-images -->
+        <div class="carousel-container">
+          <div class="carousel">
+            <div class="carousel-slides">
+              <div class="carousel-slide">
+                <img class="carousel-image" src="images/index/image1.PNG" alt="Math concept 1">
+              </div>
+              <div class="carousel-slide">
+                <img class="carousel-image" src="images/index/image2.PNG" alt="Math concept 2">
+              </div>
+              <div class="carousel-slide">
+                <img class="carousel-image" src="images/index/image3.PNG" alt="Math concept 3">
+              </div>
+            </div>
+            <button class="carousel-btn prev">‹</button>
+            <button class="carousel-btn next">›</button>
+            <div class="carousel-indicators">
+              <span class="carousel-indicator active" data-slide="0"></span>
+              <span class="carousel-indicator" data-slide="1"></span>
+              <span class="carousel-indicator" data-slide="2"></span>
+            </div>
+          </div>
           <p class="promotion-phrase">
-            Don't be afraid to try! Th first lesson is free!
+            Don't be afraid to try! The first lesson is free!
           </p>
         </div>
       </div>
     </main>
     <div id="footer"></div>
     <script src="js/header_and_footer.js"></script>
+    <script src="js/index.js"></script>
   </body>
 </html>

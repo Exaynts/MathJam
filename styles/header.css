@@ -19,6 +19,7 @@
   padding: 0 20px;
   width: 100%;
   height: var(--header-height);
+  gap: 20px;
 }
 
 .header-container.scrolled {
@@ -30,33 +31,51 @@
   height: 110px;
   object-fit: contain;
   width: 110px;
+  flex-shrink: 0;
+}
+
+.nav {
+  flex: 1;
+  max-width: 1200px;
 }
 
 .nav-list {
-  align-items: center;
-  display: flex;
-  gap: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: clamp(5px, 3vw, 50px); /* Динамический gap */
   list-style: none;
   margin: 0;
   padding: 0;
+  width: 100%;
 }
 
 .nav-list li {
   position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .nav a {
   color: #000;
-  display: inline-block;
-  font-size: 32px;
-  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(16px, 2.5vw, 32px); /* Увеличил минимальный размер шрифта */
+  padding: clamp(5px, 1.5vw, 15px) clamp(8px, 2vw, 20px); /* Динамические padding */
   text-decoration: none;
   transition: all 0.2s ease;
+  text-align: center;
+  width: 100%;
+  min-height: 44px;
+  border-radius: 8px;
+  word-break: break-word;
+  white-space: normal;
+  line-height: 1.2;
+  background-color: rgba(255, 255, 255, 0.1); /* Легкий фон для лучшей читаемости */
 }
 
 .nav a:hover {
   background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
   color: black;
 }
 
@@ -67,19 +86,22 @@
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
   display: none;
   flex-direction: column;
-  left: 0;
-  min-width: 160px;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 140px;
   position: absolute;
   top: 100%;
   z-index: 1000;
 }
 
 .dropdown-content a {
-  color: rgb(black);
+  color: #000;
   text-decoration: none;
-  padding: 12px 16px;
+  padding: 10px 12px;
   display: block;
-  text-align: left;
+  text-align: center;
+  font-size: 28px;
+  white-space: nowrap;
 }
 
 .dropdown-content a:hover {
@@ -92,4 +114,121 @@
 
 :root {
   --header-height: 125px;
+}
+
+/* Адаптивность с фокусом на уменьшение gap */
+@media (max-width: 1200px) {
+  .nav-list {
+    gap: clamp(4px, 2.5vw, 30px);
+  }
+  
+  .nav a {
+    font-size: clamp(16px, 2.2vw, 28px);
+    padding: clamp(4px, 1.2vw, 12px) clamp(6px, 1.5vw, 16px);
+  }
+  
+  .header-content .icon {
+    height: 90px;
+    width: 90px;
+  }
+}
+
+@media (max-width: 992px) {
+  .nav-list {
+    gap: clamp(3px, 2vw, 20px);
+  }
+  
+  .nav a {
+    font-size: clamp(16px, 2vw, 24px);
+    padding: clamp(3px, 1vw, 10px) clamp(5px, 1.2vw, 14px);
+  }
+  
+  .header-content {
+    padding: 0 15px;
+    gap: 15px;
+  }
+  
+  .header-content .icon {
+    height: 80px;
+    width: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-list {
+    gap: clamp(2px, 1.5vw, 15px);
+  }
+  
+  .nav a {
+    font-size: clamp(16px, 1.8vw, 20px);
+    padding: clamp(2px, 0.8vw, 8px) clamp(4px, 1vw, 12px);
+  }
+  
+  .header-content {
+    padding: 0 12px;
+    gap: 12px;
+  }
+  
+  .header-content .icon {
+    height: 70px;
+    width: 70px;
+  }
+  
+  .dropdown-content {
+    min-width: 120px;
+  }
+  
+  .dropdown-content a {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .nav-list {
+    gap: clamp(1px, 1vw, 10px);
+  }
+  
+  .nav a {
+    font-size: clamp(14px, 1.6vw, 18px);
+    padding: clamp(1px, 0.6vw, 6px) clamp(3px, 0.8vw, 10px);
+    min-height: 40px;
+  }
+  
+  .header-content {
+    padding: 0 10px;
+    gap: 10px;
+  }
+  
+  .header-content .icon {
+    height: 60px;
+    width: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-list {
+    gap: clamp(0px, 0.8vw, 8px);
+  }
+  
+  .nav a {
+    font-size: clamp(12px, 1.4vw, 16px);
+    padding: clamp(0px, 0.5vw, 5px) clamp(2px, 0.6vw, 8px);
+    min-height: 36px;
+    border-radius: 4px;
+  }
+  
+  .header-content {
+    padding: 0 8px;
+    gap: 8px;
+  }
+  
+  .header-content .icon {
+    height: 50px;
+    width: 50px;
+  }
+  
+  :root {
+    --header-height: 100px;
+  }
 }
