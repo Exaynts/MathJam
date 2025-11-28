@@ -16,38 +16,124 @@
   <body>
     <div id="header"></div>
     <main class="main">
-      <!-- Секция с курсами -->
-      <section class="courses">
-        <h1>Courses</h1>
-        <div class="course">
-          <div class="course-header">
-            <div class="course-name">
-              <h3>Course name: Algebra</h3>
-            </div>
-            <div class="course-info">
-              <div class="course-discount">Discount</div>
-              <div class="course-price">Price</div>
-              <button class="buy-button">Buy</button>
-            </div>
-          </div>
-          <div class="course-body">
-            <div class="course-description">
-              <p>
-                Course description Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat.
-              </p>
-            </div>
-            <div class="course-image">
-              <img src="images/cources/Algebra.PNG" alt="Algebra" />
-            </div>
-          </div>
+      <aside class="aside">
+        <h1>Filters</h1>
+        <div class="filter subject-of-study">
+          <h2>Subject of study</h2>
+          <form class="form">
+            <input type="checkbox" name="cource" value="algebra" />
+            <label for="cource">Algebra</label>
+            <br />
+            <input type="checkbox" name="cource" value="geometry" />
+            <label for="cource">Geometry</label>
+            <br />
+            <input type="checkbox" name="cource" value="trigonometry" />
+            <label for="cource">Trigonometry</label>
+            <br />
+            <input type="checkbox" name="cource" value="other" />
+            <label for="cource">Other</label>
+            <br />
+            <input type="checkbox" name="cource" value="all" />
+            <label for="cource">All</label>
+          </form>
         </div>
-        <div class="progress-bar"></div>
-        <div class="continue-button"></div>
-      </section>
+        <div class="filter math-level">
+          <h2>Math level</h2>
+          <form class="form">
+            <input type="checkbox" name="cource" value="high-school" />
+            <label for="cource">High school</label>
+            <br />
+            <input type="checkbox" name="cource" value="university" />
+            <label for="cource">University</label>
+            <br />
+            <input type="checkbox" name="cource" value="all" />
+            <label for="cource">All</label>
+          </form>
+        </div>
+        <div class="filter price-range">
+          <h2>Prive range</h2>
+          <form class="form">
+            <input type="checkbox" name="cource" value="0-200" />
+            <label for="cource">Less than 200</label>
+            <br />
+            <input type="checkbox" name="cource" value="200-500" />
+            <label for="cource">From 200 to 500</label>
+            <br />
+            <input type="checkbox" name="cource" value="500+" />
+            <label for="cource">More than 500</label>
+            <br />
+            <input type="checkbox" name="cource" value="all" />
+            <label for="cource">All</label>
+          </form>
+        </div>
+      </aside>
+      <div class="main-content">
+        <section class="upper-menu">
+          <div class="cource-path">
+            <p>"For school &gt Algebra"</p>
+          </div>
+          <div class="search">
+            <form action="cources.html" method="GET">
+              <input
+                class="input-field"
+                type="text"
+                name="search"
+                placeholder="Search for courses"
+              />
+              <button type="submit" class="search-button">
+                <svg
+                  class="search-icon"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                >
+                  <!-- Значок лупы-->
+                  <path
+                    d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                  />
+                </svg>
+              </button>
+            </form>
+          </div>
+          <div class="nickname">
+            <p>Name</p>
+          </div>
+          <div class="avatar">
+            <div class="avatar-circle"></div>
+          </div>
+        </section>
+        <section class="courses">
+          <h1>Courses</h1>
+          <section class="course">
+            <div class="course-header">
+              <div class="course-name">
+                <h3>Course name: Algebra</h3>
+              </div>
+              <div class="course-info">
+                <div class="course-discount">Discount</div>
+                <div class="course-price">Price</div>
+                <button class="buy-button">Buy</button>
+              </div>
+            </div>
+            <div class="course-body">
+              <div class="course-description">
+                <p>
+                  Course description Lorem ipsum dolor sit amet, consectetur
+                  adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+                  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                  exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                  consequat.
+                </p>
+              </div>
+              <div class="course-image">
+                <img src="images/cources/Algebra.PNG" alt="Algebra" />
+              </div>
+            </div>
+          </section>
+          <div class="progress-bar"></div>
+          <div class="continue-button"></div>
+        </section>
+      </div>
     </main>
 
     <div id="footer"></div>

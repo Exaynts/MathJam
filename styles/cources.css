@@ -27,22 +27,145 @@ h3,
 h4,
 p {
   color: hsl(0, 0%, 0%); /* Белый только для заголовков */
-  font-size: 24px;
+  font-size: 18px;
 }
 h1 {
   font-size: 75px;
+}
+h2 {
+  font-size: 28px;
+}
+
+/* aside styles */
+.aside {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding-left: 10px;
+  min-height: 100vh;
+  min-width: 200px;
+  border-right: #000 solid 2px;
+  background-color: #f55;
+  color: #000;
+}
+
+.aside form {
+  font-size: 24px;
+  line-height: 1.2;
+}
+.aside input[type="checkbox"] {
+  transform: scale(1.5);
+}
+
+.filter {
+  padding-left: 20px;
+}
+.form {
+  padding-left: 20px;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  flex: 5;
+}
+
+/* upper menu styles */
+.upper-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  height: 100px;
+  padding: 0 20px;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+}
+
+/*search bar*/
+.search {
+  display: flex;
+  flex: 6 1 0;
+  align-items: center;
+  height: 40px;
+}
+
+.search form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.search .input-field {
+  width: 100%;
+  height: 40px;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 25px;
+  font-size: 16px;
+  background-color: white;
+  transition: all 0.2s ease;
+}
+
+.search .input-field:focus {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  outline: none;
+}
+
+.search-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  margin-left: -45px;
+  border: none;
+  border-radius: 50%;
+  background: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.search-icon {
+  width: 20px;
+  height: 20px;
+  fill: #000;
+}
+
+.nickname {
+  display: flex;
+  flex: 1 0 0;
+  align-items: center;
+}
+
+.avatar {
+  display: flex;
+  flex: 1 0 0;
+  align-items: center;
+}
+
+.avatar-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #f55;
 }
 
 /* Course card styles */
 .courses {
   display: flex;
   flex-direction: column;
+  margin-left: 20px;
 }
 
 .course {
   display: flex;
   flex-direction: column;
-  align-self: center;
+  /* align-self: center; */
   max-width: 80%;
   border: 2px solid #000;
   border-radius: 20px;
@@ -50,7 +173,6 @@ h1 {
   background-color: white;
 }
 
-/* Верхняя строка - название, цена, кнопка */
 .course-header {
   display: flex;
   justify-content: space-between;
