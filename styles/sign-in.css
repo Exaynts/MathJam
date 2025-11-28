@@ -13,12 +13,16 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: white;
 }
+
 .main {
   display: flex;
   flex-direction: column;
   flex: 1;
+  align-items: center;
+  align-content: center;
   border-top: #000 solid 2px;
   border-bottom: #000 solid 2px;
+  padding: 40px 20px;
 }
 
 h1,
@@ -26,9 +30,154 @@ h2,
 h3,
 h4,
 p {
-  color: hsl(0, 0%, 0%); /* Белый только для заголовков */
+  color: hsl(0, 0%, 0%);
   font-size: 24px;
 }
+
 h1 {
+  margin-bottom: 30px;
   font-size: 75px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.title {
+  text-align: center;
+}
+
+.data-form {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  border: 2px solid #000;
+  border-radius: 20px;
+  padding: 30px;
+  object-fit: cover;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  background-color: #f9f9f9;
+}
+
+.hidden {
+  display: none;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  color: #000;
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.form-description p {
+  color: #333;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+.text-input {
+  width: 100%;
+  height: 50px;
+  border: 2px solid #000;
+  border-radius: 20px;
+  padding: 0 20px;
+  font-size: 24px;
+  background-color: white;
+  transition: all 0.5s ease;
+}
+
+.text-input:focus {
+  border-color: #f55;
+  box-shadow: 0 0 8px rgba(255, 85, 85, 0.5);
+  outline: none;
+}
+
+.forgot-links {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+}
+
+.forgot-link {
+  color: #f55;
+  font-size: 18px;
+  text-decoration: none;
+  transition: color 0.5s ease;
+  cursor: pointer;
+}
+
+.forgot-link:hover {
+  color: #e44;
+  text-decoration: underline;
+}
+
+.faq-link {
+  margin: 15px 0;
+  text-align: center;
+}
+
+.faq-link p {
+  color: #333;
+  font-size: 16px;
+}
+
+.faq-text {
+  color: #f55;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.faq-text:hover {
+  color: #e44;
+  text-decoration: underline;
+}
+
+.sign-in-button {
+  width: 100%;
+  height: 60px;
+  margin-top: 10px;
+  border: 2px solid #000;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  background-color: #f55;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.sign-in-button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #f88;
+  transform: translateY(-2px);
+}
+
+.back-button {
+  width: 100%;
+  height: 50px;
+  margin-top: 10px;
+  border: 2px solid #000;
+  border-radius: 20px;
+  color: #000;
+  font-weight: bold;
+  font-size: 20px;
+  background-color: white;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
 }

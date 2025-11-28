@@ -14,26 +14,126 @@
   <body>
     <div id="header"></div>
     <main class="main">
-      <section class = "title">
+      <!-- Sign-in form -->
+      <section class="data-form" id="login-form">
         <h1>Sign in</h1>
+        <form class="login-form">
+          <div class="form-group">
+            <label for="login">Login</label>
+            <input
+              type="text"
+              id="login"
+              name="login"
+              class="text-input"
+              placeholder="Enter your login"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="text-input"
+              placeholder="Enter your password"
+            />
+          </div>
+
+          <div class="forgot-links">
+            <a href="#" class="forgot-link" onclick="showForgotPassword()"
+              >forgot password?</a
+            >
+            <a href="#" class="forgot-link" onclick="showForgotLogin()"
+              >forgot login?</a
+            >
+          </div>
+
+          <button type="submit" class="sign-in-button">Sign in</button>
+        </form>
       </section>
-      <section class = "data-form">
-        <div class = "login">
-          <p>Login</p>
-          <div class = "login-textbox">
-            <p>Justjam</p>  
+
+      <!-- Forgot-login form -->
+      <section class="data-form hidden" id="forgot-login-form">
+        <h1>Forgot Login</h1>
+        <form class="login-form">
+          <div class="form-group">
+            <label for="email-or-phone">E-mail or Phone Number</label>
+            <input
+              type="text"
+              id="email-or-phone"
+              name="email-or-phone"
+              class="text-input"
+              placeholder="Enter your e-mail or phone number"
+            />
           </div>
-        </div>
-        <div class = "password">
-          <p>Password</p>
-            <div class = "password-textbox">
-            <p>ILoveMath</p>  
+
+          <div class="form-group">
+            <label for="password-recovery">Password</label>
+            <input
+              type="password"
+              id="password-recovery"
+              name="password-recovery"
+              class="text-input"
+              placeholder="Enter your password"
+            />
           </div>
-        </div>
+
+          <div class="faq-link">
+            <p>
+              If you have any problems, you can go to the
+              <a href="#" class="faq-text">FAQ section</a>
+            </p>
+          </div>
+
+          <button type="submit" class="sign-in-button">Recover Login</button>
+          <button type="button" class="back-button" onclick="showLoginForm()">
+            Back to Sign in
+          </button>
+        </form>
+      </section>
+
+      <!-- Forgot-password form -->
+      <section class="data-form hidden" id="forgot-password-form">
+        <h1>Forgot Password</h1>
+        <form class="login-form">
+          <div class="form-group">
+            <label for="recovery-email">E-mail or phone number</label>
+            <input
+              type="text"
+              id="recovery-email"
+              name="recovery-email"
+              class="text-input"
+              placeholder="Enter your e-mail or phone number"
+            />
+          </div>
+          <div class="form-group">
+            <label for="phone-confirmation">Phone number</label>
+            <input
+              type="tel"
+              id="phone-confirmation"
+              name="phone-confirmation"
+              class="text-input"
+              placeholder="Confirm your phone number"
+            />
+          </div>
+          <div class="faq-link">
+            <p>
+              If you have any problems, you can go to the
+              <a href="#" class="faq-text">FAQ section</a>
+            </p>
+          </div>
+
+          <button type="submit" class="sign-in-button">Reset Password</button>
+          <button type="button" class="back-button" onclick="showLoginForm()">
+            Back to Sign in
+          </button>
+        </form>
       </section>
     </main>
 
     <div id="footer"></div>
     <script src="js/header_and_footer.js"></script>
+    <script src="js/sign-in.js"></script>
   </body>
 </html>
