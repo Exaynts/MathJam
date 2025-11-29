@@ -19,8 +19,6 @@ body {
   display: flex;
   flex-direction: row;
   flex: 1;
-  border-top: #000 solid 2px;
-  border-bottom: #000 solid 2px;
 }
 
 .main-content {
@@ -59,9 +57,11 @@ h1 {
   /**/
 }
 
-.buy-new-course {}
+.buy-new-course {
+}
 
-.faq {}
+.faq {
+}
 
 /* upper menu styles */
 .upper-menu {
@@ -147,13 +147,17 @@ h1 {
 }
 
 /* cources styles */
-.courses {}
+.courses {
+}
 
-.course-name {}
+.course-name {
+}
 
-.progress-bar {}
+.progress-bar {
+}
 
-.coutinue-button {}
+.coutinue-button {
+}
 
 /* data styles */
 .data {
@@ -163,7 +167,8 @@ h1 {
   align-self: center;
 }
 
-.data-text {}
+.data-text {
+}
 
 form {
   max-width: none;
@@ -228,7 +233,6 @@ form {
 .grid-item input:focus,
 .grid-item select:focus {
   outline: none;
-
 }
 
 .grid-item input[type="date"] {
@@ -258,7 +262,7 @@ form {
 }
 
 .pencil-button::after {
-  content: '';
+  content: "";
   width: 20px;
   height: 20px;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23808080' d='M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z'/%3E%3C/svg%3E");
@@ -288,20 +292,29 @@ for the login field so that the text doesn't go under the icon */
   padding-right: 20px;
 }
 
-.login {}
+.login {
+}
 
-.e-mail {}
+.e-mail {
+}
 
-.password {}
+.password {
+}
 
-.phone-number {}
+.phone-number {
+}
 
-.name {}
+.name {
+}
 
-.date-of-birth {}
+.date-of-birth {
+}
 
-.surname {}
+.surname {
+}
 
-.sex {}
+.sex {
+}
 
-.math-level {}
+.math-level {
+}

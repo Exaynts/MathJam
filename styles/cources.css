@@ -17,8 +17,6 @@ body {
   display: flex;
   flex-direction: row;
   flex: 1;
-  border-top: #000 solid 2px;
-  border-bottom: #000 solid 2px;
 }
 
 h1,

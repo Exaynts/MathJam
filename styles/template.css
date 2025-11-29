@@ -17,8 +17,6 @@ body {
   display: flex;
   flex-direction: row;
   flex: 1;
-  border-top: #000 solid 2px;
-  border-bottom: #000 solid 2px;
 }
 
 .main-content {
@@ -33,7 +31,6 @@ h2,
 h3,
 h4,
 p {
-  color: hsl(0, 0%, 0%); /* Белый только для заголовков */
   font-size: 24px;
 }
 h1 {

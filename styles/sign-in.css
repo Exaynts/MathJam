@@ -20,8 +20,6 @@ body {
   flex: 1;
   align-items: center;
   align-content: center;
-  border-top: #000 solid 2px;
-  border-bottom: #000 solid 2px;
   padding: 40px 20px;
 }
 

@@ -31,9 +31,9 @@ h1 {
 /*main styles*/
 .main {
   position: relative;
+  margin-top: var(--header-height);
   padding: 20px 0 0;
   color: #858585;
-  margin-top: var(--header-height);
 }
 
 .main::before {
@@ -74,8 +74,9 @@ h1 {
   width: 700px;
   height: 250px;
   margin: 30px 0 50px;
+  border: 2px solid #000;
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
   color: #000;
   font-family: "Tahoma";
   font-weight: 700;
@@ -84,13 +85,11 @@ h1 {
   text-decoration: underline;
   background-color: #f55;
   transition: all 0.2s ease;
-  border: 2px solid #000;
   cursor: pointer;
 }
 .get-started:hover {
-  color: rgb(0, 0, 0);
-  background-color: #f55;
-  filter: brightness(1.5);
+  background-color: #f88;
+  transform: scale(1.05);
 }
 
 /* carousel styles */
@@ -105,10 +104,10 @@ h1 {
   position: relative;
   width: 100%;
   height: 100%;
-  overflow: hidden;
   border: 2px solid #000;
   border-radius: 25px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
 }
 
 .carousel-slides {
@@ -119,11 +118,11 @@ h1 {
 }
 
 .carousel-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 33.333%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-color: #f0f0f0; /* Фон на случай, если изображение не загрузится */
 }
 
@@ -147,20 +146,20 @@ h1 {
 .carousel-btn {
   position: absolute;
   bottom: 20px;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 50px;
   height: 50px;
-  background-color: rgba(245, 85, 85, 0.8);
   border: 2px solid #000;
   border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  font-weight: bold;
   color: #000;
+  font-weight: bold;
+  font-size: 24px;
+  background-color: rgba(245, 85, 85, 0.8);
   transition: all 0.3s ease;
-  z-index: 2;
+  cursor: pointer;
 }
 
 .carousel-btn:hover {
@@ -181,20 +180,20 @@ h1 {
   position: absolute;
   bottom: 15px;
   left: 50%;
-  transform: translateX(-50%);
+  z-index: 2;
   display: flex;
   gap: 10px;
-  z-index: 2;
+  transform: translateX(-50%);
 }
 
 .carousel-indicator {
   width: 12px;
   height: 12px;
+  border: 1px solid #000;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.5);
-  border: 1px solid #000;
+  transition: all 0.5s ease;
   cursor: pointer;
-  transition: all 0.3s ease;
 }
 
 .carousel-indicator.active {
@@ -203,7 +202,7 @@ h1 {
 }
 
 .promotion-phrase {
+  margin-top: 20px;
   font-size: 30px;
   text-align: center;
-  margin-top: 20px;
 }
