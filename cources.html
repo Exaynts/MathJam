@@ -1,72 +1,82 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My profile</title>
+    <title data-i18n="Courses">Courses</title>
 
     <link rel="icon" href="images/logo.ico" />
-    <link rel="import" href="header.html" />
     <link rel="stylesheet" href="styles/header.css" />
-    <link rel="import" href="footer.html" />
     <link rel="stylesheet" href="styles/footer.css" />
     <link rel="stylesheet" href="styles/cources.css" />
   </head>
   <body>
     <div id="header"></div>
     <main class="main">
-      <aside class="aside">
-        <h1>Filters</h1>
-        <div class="filter subject-of-study">
-          <h2>Subject of study</h2>
-          <form class="form">
-            <input type="checkbox" name="cource" value="algebra" />
-            <label for="cource">Algebra</label>
-            <br />
-            <input type="checkbox" name="cource" value="geometry" />
-            <label for="cource">Geometry</label>
-            <br />
-            <input type="checkbox" name="cource" value="trigonometry" />
-            <label for="cource">Trigonometry</label>
-            <br />
-            <input type="checkbox" name="cource" value="other" />
-            <label for="cource">Other</label>
-            <br />
-            <input type="checkbox" name="cource" value="all" />
-            <label for="cource">All</label>
-          </form>
-        </div>
-        <div class="filter math-level">
-          <h2>Math level</h2>
-          <form class="form">
-            <input type="checkbox" name="cource" value="high-school" />
-            <label for="cource">High school</label>
-            <br />
-            <input type="checkbox" name="cource" value="university" />
-            <label for="cource">University</label>
-            <br />
-            <input type="checkbox" name="cource" value="all" />
-            <label for="cource">All</label>
-          </form>
-        </div>
-        <div class="filter price-range">
-          <h2>Prive range</h2>
-          <form class="form">
-            <input type="checkbox" name="cource" value="0-200" />
-            <label for="cource">Less than 200</label>
-            <br />
-            <input type="checkbox" name="cource" value="200-500" />
-            <label for="cource">From 200 to 500</label>
-            <br />
-            <input type="checkbox" name="cource" value="500+" />
-            <label for="cource">More than 500</label>
-            <br />
-            <input type="checkbox" name="cource" value="all" />
-            <label for="cource">All</label>
-          </form>
-        </div>
-      </aside>
+      <!-- ДОБАВЛЕН КОНТЕЙНЕР И КНОПКА ПЕРЕМЕЩЕНА -->
+      <div class="aside-container">
+        <aside class="aside">
+          <div class="aside-content">
+            <h1 data-i18n="Filters">Filters</h1>
+            <div class="filter subject-of-study">
+              <h2 data-i18n="Subject of study">Subject of study</h2>
+              <form class="form">
+                <input type="checkbox" name="cource" value="algebra" />
+                <label for="cource" data-i18n="Algebra">Algebra</label>
+                <br />
+                <input type="checkbox" name="cource" value="geometry" />
+                <label for="cource" data-i18n="Geometry">Geometry</label>
+                <br />
+                <input type="checkbox" name="cource" value="trigonometry" />
+                <label for="cource" data-i18n="Trigonometry">Trigonometry</label>
+                <br />
+                <input type="checkbox" name="cource" value="other" />
+                <label for="cource" data-i18n="Other">Other</label>
+                <br />
+                <input type="checkbox" name="cource" value="all" />
+                <label for="cource" data-i18n="All">All</label>
+              </form>
+            </div>
+            <div class="filter math-level">
+              <h2 data-i18n="Math level">Math level</h2>
+              <form class="form">
+                <input type="checkbox" name="cource" value="high-school" />
+                <label for="cource" data-i18n="High school">High school</label>
+                <br />
+                <input type="checkbox" name="cource" value="university" />
+                <label for="cource" data-i18n="University">University</label>
+                <br />
+                <input type="checkbox" name="cource" value="all" />
+                <label for="cource" data-i18n="All">All</label>
+              </form>
+            </div>
+            <div class="filter price-range">
+              <h2 data-i18n="Price range">Price range</h2>
+              <form class="form">
+                <input type="checkbox" name="cource" value="0-200" />
+                <label for="cource" data-i18n="Less than 200"
+                  >Less than 200</label
+                >
+                <br />
+                <input type="checkbox" name="cource" value="200-500" />
+                <label for="cource" data-i18n="From 200 to 500"
+                  >From 200 to 500</label
+                >
+                <br />
+                <input type="checkbox" name="cource" value="500+" />
+                <label for="cource" data-i18n="More than 500"
+                  >More than 500</label
+                >
+                <br />
+                <input type="checkbox" name="cource" value="all" />
+                <label for="cource" data-i18n="All">All</label>
+              </form>
+            </div>
+          </div>
+        </aside>
+        <div class="aside-toggle" id="asideToggle"></div>
+      </div>
       <div class="main-content">
         <section class="upper-menu">
           <div class="cource-path">
@@ -78,10 +88,10 @@
                 class="input-field"
                 type="text"
                 name="search"
+                data-i18n-placeholder="Search for courses"
                 placeholder="Search for courses"
               />
               <button type="submit" class="search-button">
-                <!-- magnifying glass icon-->
                 <svg
                   class="search-icon"
                   viewBox="0 0 24 24"
@@ -96,23 +106,23 @@
             </form>
           </div>
           <div class="nickname">
-            <p>Name</p>
+            <p data-i18n="Name">Name</p>
           </div>
           <div class="avatar">
             <div class="avatar-circle"></div>
           </div>
         </section>
         <section class="courses">
-          <h1>Courses</h1>
+          <h1 data-i18n="Courses">Courses</h1>
           <section class="course">
             <div class="course-header">
               <div class="course-name">
-                <h3>Course name: Algebra</h3>
+                <h3 data-i18n="Algebra">Algebra</h3>
               </div>
               <div class="course-info">
-                <div class="course-discount">Discount</div>
-                <div class="course-price">Price</div>
-                <button class="buy-button">Buy</button>
+                <div class="course-discount" data-i18n="Discount">Discount</div>
+                <div class="course-price" data-i18n="Price">Price</div>
+                <button class="buy-button" data-i18n="Buy">Buy</button>
               </div>
             </div>
             <div class="course-body">
@@ -133,26 +143,27 @@
           <section class="course">
             <div class="course-header">
               <div class="course-name">
-                <h3>Course name: Algebra</h3>
+                <h3 data-i18n="Geometry">Geometry</h3>
               </div>
               <div class="course-info">
-                <div class="course-discount">Discount</div>
-                <div class="course-price">Price</div>
-                <button class="buy-button">Buy</button>
+                <div class="course-discount" data-i18n="Discount">Discount</div>
+                <div class="course-price" data-i18n="Price">Price</div>
+                <button class="buy-button" data-i18n="Buy">Buy</button>
               </div>
             </div>
             <div class="course-body">
               <div class="course-description">
                 <p>
-                  Course description Lorem ipsum dolor sit amet, consectetur
-                  adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
-                  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                  consequat.
+                  Sed do eiusmod tempor incididunt ut labore et dolore magna
+                  aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                  ullamco laboris nisi ut aliquip ex ea commodo consequat. Sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
               </div>
               <div class="course-image">
-                <img src="images/cources/Algebra.PNG" alt="Algebra" />
+                <img src="images/cources/Geometry.PNG" alt="Algebra" />
               </div>
             </div>
           </section>
@@ -163,6 +174,9 @@
     </main>
 
     <div id="footer"></div>
+
+    <script src="js/translator.js"></script>
     <script src="js/header_and_footer.js"></script>
+    <script src="js/cources.js"></script>
   </body>
 </html>

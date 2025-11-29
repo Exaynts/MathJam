@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My profile</title>
+    <title data-i18n="Sign in">Sign in</title>
 
     <link rel="icon" href="images/logo.ico" />
     <link rel="stylesheet" href="styles/header.css" />
@@ -16,78 +16,109 @@
     <main class="main">
       <!-- Sign-in form -->
       <section class="data-form" id="login-form">
-        <h1>Sign in</h1>
+        <h1 data-i18n="Sign in">Sign in</h1>
         <form class="login-form">
           <div class="form-group">
-            <label for="login">Login</label>
+            <label for="login" data-i18n="Login">Login</label>
             <input
               type="text"
               id="login"
               name="login"
               class="text-input"
+              data-i18n-placeholder="Enter your login"
               placeholder="Enter your login"
             />
           </div>
 
           <div class="form-group">
-            <label for="password">Password</label>
+            <label for="password" data-i18n="Password">Password</label>
             <input
               type="password"
               id="password"
               name="password"
               class="text-input"
+              data-i18n-placeholder="Enter your password"
               placeholder="Enter your password"
             />
           </div>
 
           <div class="forgot-links">
-            <a href="#" class="forgot-link" onclick="showForgotPassword()"
+            <a
+              href="#"
+              class="forgot-link"
+              onclick="showForgotPassword()"
+              data-i18n="forgot password?"
               >forgot password?</a
             >
-            <a href="#" class="forgot-link" onclick="showForgotLogin()"
+            <a
+              href="#"
+              class="forgot-link"
+              onclick="showForgotLogin()"
+              data-i18n="forgot login?"
               >forgot login?</a
             >
           </div>
 
-          <button type="submit" class="sign-in-button">Sign in</button>
+          <button type="submit" class="sign-in-button" data-i18n="Sign in">
+            Sign in
+          </button>
         </form>
       </section>
 
       <!-- Forgot-login form -->
       <section class="data-form hidden" id="forgot-login-form">
-        <h1>Forgot Login</h1>
+        <h1 data-i18n="Forgot Login">Forgot Login</h1>
         <form class="login-form">
           <div class="form-group">
-            <label for="email-or-phone">E-mail or Phone Number</label>
+            <label for="email-or-phone" data-i18n="E-mail or Phone Number"
+              >E-mail or Phone Number</label
+            >
             <input
               type="text"
               id="email-or-phone"
               name="email-or-phone"
               class="text-input"
+              data-i18n-placeholder="Enter your e-mail or phone number"
               placeholder="Enter your e-mail or phone number"
             />
           </div>
 
           <div class="form-group">
-            <label for="password-recovery">Password</label>
+            <label for="password-recovery" data-i18n="Password">Password</label>
             <input
               type="password"
               id="password-recovery"
               name="password-recovery"
               class="text-input"
+              data-i18n-placeholder="Enter your password"
               placeholder="Enter your password"
             />
           </div>
 
           <div class="faq-link">
-            <p>
+            <p
+              data-i18n="If you have any problems, you can go to the FAQ section"
+            >
               If you have any problems, you can go to the
-              <a href="#" class="faq-text">FAQ section</a>
+              <a href="#" class="faq-text" data-i18n="FAQ section"
+                >FAQ section</a
+              >
             </p>
           </div>
 
-          <button type="submit" class="sign-in-button">Recover Login</button>
-          <button type="button" class="back-button" onclick="showLoginForm()">
+          <button
+            type="submit"
+            class="sign-in-button"
+            data-i18n="Recover Login"
+          >
+            Recover Login
+          </button>
+          <button
+            type="button"
+            class="back-button"
+            onclick="showLoginForm()"
+            data-i18n="Back to Sign in"
+          >
             Back to Sign in
           </button>
         </form>
@@ -95,37 +126,58 @@
 
       <!-- Forgot-password form -->
       <section class="data-form hidden" id="forgot-password-form">
-        <h1>Forgot Password</h1>
+        <h1 data-i18n="Forgot Password">Forgot Password</h1>
         <form class="login-form">
           <div class="form-group">
-            <label for="recovery-email">E-mail or phone number</label>
+            <label for="recovery-email" data-i18n="E-mail or Phone Number"
+              >E-mail or phone number</label
+            >
             <input
               type="text"
               id="recovery-email"
               name="recovery-email"
               class="text-input"
+              data-i18n-placeholder="Enter your e-mail or phone number"
               placeholder="Enter your e-mail or phone number"
             />
           </div>
           <div class="form-group">
-            <label for="phone-confirmation">Phone number</label>
+            <label for="phone-confirmation" data-i18n="Phone number"
+              >Phone number</label
+            >
             <input
               type="tel"
               id="phone-confirmation"
               name="phone-confirmation"
               class="text-input"
+              data-i18n-placeholder="Confirm your phone number"
               placeholder="Confirm your phone number"
             />
           </div>
           <div class="faq-link">
-            <p>
+            <p
+              data-i18n="If you have any problems, you can go to the FAQ section"
+            >
               If you have any problems, you can go to the
-              <a href="#" class="faq-text">FAQ section</a>
+              <a href="#" class="faq-text" data-i18n="FAQ section"
+                >FAQ section</a
+              >
             </p>
           </div>
 
-          <button type="submit" class="sign-in-button">Reset Password</button>
-          <button type="button" class="back-button" onclick="showLoginForm()">
+          <button
+            type="submit"
+            class="sign-in-button"
+            data-i18n="Reset Password"
+          >
+            Reset Password
+          </button>
+          <button
+            type="button"
+            class="back-button"
+            onclick="showLoginForm()"
+            data-i18n="Back to Sign in"
+          >
             Back to Sign in
           </button>
         </form>
@@ -133,6 +185,7 @@
     </main>
 
     <div id="footer"></div>
+    <script src="js/translator.js"></script>
     <script src="js/header_and_footer.js"></script>
     <script src="js/sign-in.js"></script>
   </body>

@@ -9,14 +9,18 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  margin: 0;
+  padding-top: 0;
   color: #f55;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: white;
 }
+
 .main {
   display: flex;
   flex-direction: row;
   flex: 1;
+  margin-top: var(--header-height);
 }
 
 .main-content {

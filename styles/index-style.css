@@ -14,6 +14,8 @@ body {
   flex-direction: column;
   color: #f55;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  display: flex;
 }
 
 h1,
@@ -34,6 +36,8 @@ h1 {
   margin-top: var(--header-height);
   padding: 20px 0 0;
   color: #858585;
+  flex: 1;
+  min-height: calc(100vh - var(--header-height) - 200px); /* Учитываем высоту header и footer */
 }
 
 .main::before {
@@ -57,6 +61,7 @@ h1 {
   align-items: flex-start;
   max-width: 80%;
   margin: 50px auto 0;
+  padding-bottom: 40px; /* Добавляем отступ снизу */
 }
 
 .intro-block {
@@ -203,6 +208,12 @@ h1 {
 
 .promotion-phrase {
   margin-top: 20px;
-  font-size: 30px;
+  font-size: 24px; /* Уменьшаем размер шрифта для русского текста */
   text-align: center;
+  line-height: 1.4; /* Увеличиваем межстрочный интервал */
+  min-height: 70px; /* Минимальная высота для двухстрочного текста */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px; /* Добавляем отступы по бокам */
 }

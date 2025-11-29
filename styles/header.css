@@ -107,7 +107,7 @@
 }
 
 :root {
-  --header-height: 125px;
+  --header-height: 120px;
 }
 
 /* Reduce gap for low screen width adaptivity*/
