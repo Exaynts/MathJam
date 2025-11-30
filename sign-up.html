@@ -4,16 +4,156 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My profile</title>
+    <title data-i18n="Sign up">Sign up</title>
 
     <link rel="icon" href="images/logo.ico" />
     <link rel="stylesheet" href="styles/header.css" />
     <link rel="stylesheet" href="styles/footer.css" />
-    <link rel="stylesheet" href="styles/template.css" />
+    <link rel="stylesheet" href="styles/sign-up.css" />
   </head>
   <body>
     <div id="header"></div>
-    <main class="main"></main>
+    <main class="main">
+      <section class="data-form">
+        <h1 data-i18n="Create Account">Create Account</h1>
+        <form class="signup-form">
+          <div class="form-group">
+            <label for="name" data-i18n="Name">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="text-input"
+              data-i18n-placeholder="Enter your name"
+              placeholder="Enter your name"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="surname" data-i18n="Surname">Surname</label>
+            <input
+              type="text"
+              id="surname"
+              name="surname"
+              class="text-input"
+              data-i18n-placeholder="Enter your surname"
+              placeholder="Enter your surname"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email" data-i18n="E-mail">E-mail</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="text-input"
+              data-i18n-placeholder="Enter your e-mail"
+              placeholder="Enter your e-mail"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="phone" data-i18n="Phone number">Phone number</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              class="text-input"
+              data-i18n-placeholder="Enter your phone number"
+              placeholder="Enter your phone number"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="login" data-i18n="Login">Login</label>
+            <input
+              type="text"
+              id="login"
+              name="login"
+              class="text-input"
+              data-i18n-placeholder="Create your login"
+              placeholder="Create your login"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="password" data-i18n="Password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="text-input"
+              data-i18n-placeholder="Create your password"
+              placeholder="Create your password"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="confirm-password" data-i18n="Confirm Password"
+              >Confirm Password</label
+            >
+            <input
+              type="password"
+              id="confirm-password"
+              name="confirm-password"
+              class="text-input"
+              data-i18n-placeholder="Confirm your password"
+              placeholder="Confirm your password"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="birthdate" data-i18n="Date of birth"
+              >Date of birth</label
+            >
+            <input type="date" id="birthdate" name="birthdate" class="text-input" />
+          </div>
+
+          <div class="form-group">
+            <label for="sex" data-i18n="Sex">Sex</label>
+            <select id="sex" name="sex" class="text-input">
+              <option value="" data-i18n="Select sex">Select sex</option>
+              <option value="male" data-i18n="Male">Male</option>
+              <option value="female" data-i18n="Female">Female</option>
+              <option value="other" data-i18n="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="math-level" data-i18n="Math level">Math level</label>
+            <select id="math-level" name="math-level" class="text-input">
+              <option value="" data-i18n="Select math level">
+                Select math level
+              </option>
+              <option value="beginner" data-i18n="Beginner">Beginner</option>
+              <option value="intermediate" data-i18n="Intermediate">
+                Intermediate
+              </option>
+              <option value="advanced" data-i18n="Advanced">Advanced</option>
+            </select>
+          </div>
+
+          <div class="faq-link">
+            <p>
+              <span data-i18n="By creating an account you agree to our">By creating an account you agree to our</span>
+              <a href="#" class="faq-text" data-i18n="Terms and Conditions">Terms and Conditions</a>
+            </p>
+          </div>
+
+          <button type="submit" class="sign-up-button" data-i18n="Sign up">
+            Sign up
+          </button>
+        </form>
+        <div class="login-link">
+          <p>
+            <span data-i18n="Already have an account?">Already have an account?</span>
+            <a href="sign-in.html" class="faq-text" data-i18n="Sign in">Sign in</a>
+          </p>
+        </div>
+        </form>
+      </section>
+    </main>
 
     <div id="footer"></div>
     <script src="js/translator.js"></script>

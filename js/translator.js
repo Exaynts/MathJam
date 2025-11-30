@@ -1,7 +1,7 @@
 // Configuration
 const DEFAULT_LANGUAGE = 'en';
 const DICTIONARY_PATH = 'lang/';
-let currentLanguage = DEFAULT_LANGUAGE; // ИНИЦИАЛИЗИРУЕМ ЗНАЧЕНИЕ ПО УМОЛЧАНИЮ
+let currentLanguage = DEFAULT_LANGUAGE;
 let dictionary = {};
 
 // Load dictionary from JSON file
@@ -36,7 +36,40 @@ function applyTranslation(translations) {
     textElements.forEach(element => {
         const key = element.getAttribute('data-i18n');
         if (translations[key]) {
-            element.textContent = translations[key];
+            // Сохраняем структуру ссылок
+            if (element.tagName === 'A') {
+                // Для ссылок заменяем только текстовое содержимое, сохраняя HTML
+                const originalHTML = element.innerHTML;
+                const tempDiv = document.createElement('div');
+                tempDiv.innerHTML = originalHTML;
+                
+                // Заменяем текстовые узлы
+                const walker = document.createTreeWalker(
+                    tempDiv,
+                    NodeFilter.SHOW_TEXT,
+                    null,
+                    false
+                );
+                
+                let node;
+                let textReplaced = false;
+                while (node = walker.nextNode()) {
+                    if (node.textContent.trim() && !textReplaced) {
+                        node.textContent = translations[key];
+                        textReplaced = true;
+                    }
+                }
+                
+                // Если не нашли текстовый узел, просто заменяем весь контент
+                if (!textReplaced) {
+                    element.textContent = translations[key];
+                } else {
+                    element.innerHTML = tempDiv.innerHTML;
+                }
+            } else {
+                // Для обычных элементов заменяем весь контент
+                element.textContent = translations[key];
+            }
         }
     });
 

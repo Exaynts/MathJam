@@ -6,7 +6,6 @@
   z-index: 9;
   display: flex;
   justify-content: space-between;
-
   align-items: center;
   gap: 20px;
   box-sizing: border-box;
@@ -34,19 +33,23 @@
 }
 
 .nav-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  display: flex;
+  justify-content: space-between;
   gap: clamp(5px, 3vw, 50px);
   width: 100%;
   margin: 0;
   padding: 0;
   list-style: none;
+  flex-wrap: nowrap;
 }
 
 .nav-list li {
   position: relative;
   display: flex;
   justify-content: center;
+  max-height: 100px;
+  flex: 1;
+  min-width: 0;
 }
 
 .nav a {
@@ -64,7 +67,9 @@
   word-break: break-word;
   background-color: #f88;
   transition: all 0.2s ease;
-  white-space: normal;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .nav a:hover {
@@ -120,11 +125,6 @@
     padding: clamp(4px, 1.2vw, 12px) clamp(6px, 1.5vw, 16px);
     font-size: clamp(16px, 2.2vw, 28px);
   }
-
-  .header-content .icon {
-    width: 90px;
-    height: 90px;
-  }
 }
 
 @media (max-width: 992px) {
@@ -137,12 +137,11 @@
     font-size: clamp(16px, 2vw, 24px);
   }
 
-  .header-content {
-    gap: 15px;
+  .header {
     padding: 0 15px;
   }
 
-  .header-content .icon {
+  .header .icon {
     width: 80px;
     height: 80px;
   }
@@ -158,12 +157,11 @@
     font-size: clamp(16px, 1.8vw, 20px);
   }
 
-  .header-content {
-    gap: 12px;
+  .header {
     padding: 0 12px;
   }
 
-  .header-content .icon {
+  .header .icon {
     width: 70px;
     height: 70px;
   }
@@ -189,12 +187,11 @@
     font-size: clamp(14px, 1.6vw, 18px);
   }
 
-  .header-content {
-    gap: 10px;
+  .header {
     padding: 0 10px;
   }
 
-  .header-content .icon {
+  .header .icon {
     width: 60px;
     height: 60px;
   }
@@ -202,27 +199,47 @@
 
 @media (max-width: 480px) {
   .nav-list {
-    gap: clamp(0px, 0.8vw, 8px);
+    gap: clamp(0px, 0.8vw, 5px);
   }
 
   .nav a {
-    min-height: 36px;
+    min-height: 32px;
     border-radius: 4px;
     padding: clamp(0px, 0.5vw, 5px) clamp(2px, 0.6vw, 8px);
     font-size: clamp(12px, 1.4vw, 16px);
   }
 
-  .header-content {
-    gap: 8px;
-    padding: 0 8px;
+  .header {
+    padding: 0 5px;
   }
 
-  .header-content .icon {
-    width: 50px;
-    height: 50px;
+  .header .icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Extra small screens - further reduce padding */
+@media (max-width: 400px) {
+  .nav-list {
+    gap: 2px;
   }
 
-  :root {
-    --header-height: 100px;
+  .nav a {
+    padding: 2px 4px;
+    font-size: 12px;
+    min-height: 30px;
+  }
+
+  .header {
+    padding: 0 3px;
+  }
+}
+
+@media (max-width: 360px) {
+  .nav a {
+    padding: 1px 2px;
+    font-size: 11px;
+    min-height: 28px;
   }
 }
