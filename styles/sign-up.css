@@ -40,6 +40,10 @@ h1 {
   font-size: 64px;
 }
 
+h2 {
+  white-space: nowrap;
+  font-size: 40px;
+}
 .title {
   text-align: center;
 }

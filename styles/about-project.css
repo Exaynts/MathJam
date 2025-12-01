@@ -9,8 +9,6 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  margin: 0;
-  padding-top: 0;
   color: #f55;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: white;
@@ -18,25 +16,177 @@ body {
 
 .main {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
   flex: 1;
   margin-top: var(--header-height);
+  padding: 40px 20px;
+  background-color: #fff;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.main-content {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  padding: 20px;
+h1, h2, h3, h4, p {
+  color: hsl(0, 0%, 0%);
 }
 
-h1,
-h2,
-h3,
-h4,
-p {
-  font-size: 24px;
-}
 h1 {
-  font-size: 75px;
+  margin-bottom: 50px;
+  font-size: clamp(40px, 6vw, 75px);
+  text-align: center;
+  white-space: normal;
+  color: #f55;
+  width: 100%;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: clamp(30px, 4vw, 50px);
+  text-align: center;
+  color: #000;
+  border-bottom: 3px solid #f88;
+  padding-bottom: 15px;
+}
+
+h3 {
+  font-size: 28px;
+  color: #f55;
+  font-weight: 600;
+  white-space: normal;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+p {
+  font-size: 20px;
+}
+
+/* Card Styles */
+.card {
+  margin-bottom: 60px;
+  padding: 40px;
+  border: 2px solid #000;
+  border-radius: 25px;
+  background-color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.card-item {
+  padding: 25px;
+  border: 2px solid #ddd;
+  border-radius: 20px;
+  background-color: #f9f9f9;
+  transition: all 0.5s ease;
+}
+
+.card-item:hover {
+  border-color: #f55;
+  box-shadow: 0 8px 20px rgba(255, 85, 85, 0.15);
+  transform: translateY(-5px);
+}
+
+/* Mission Section */
+.our-mission {
+  text-align: center;
+  background-color: #fff;
+}
+
+.mission-statement {
+  font-size: 28px;
+  font-weight: 600;
+  color: #000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main {
+    padding: 20px 15px;
+  }
+
+  .card {
+    padding: 25px;
+    margin-bottom: 40px;
+  }
+
+  h1 {
+    font-size: clamp(32px, 8vw, 50px);
+    margin-bottom: 30px;
+  }
+
+  h2 {
+    font-size: clamp(26px, 5vw, 40px);
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  .mission-statement {
+    font-size: 24px;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card-item {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    padding: 20px 10px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  .mission-statement {
+    font-size: 20px;
+  }
+}
+
+/* Медиа-запрос для очень широких экранов */
+@media (min-width: 1200px) {
+  .main {
+    padding: 40px 0;
+  }
+  
+  .card {
+    padding: 40px 50px;
+  }
 }
