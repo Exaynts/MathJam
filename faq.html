@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="Frequently Asked Questions">Часто задаваемые вопросы</title>
+    
+    <link rel="stylesheet" href="styles/about-project.css">
+    <link rel="stylesheet" href="styles/faq.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="header"></div>
+    
+    <main class="main">
+        <h1 data-i18n="Frequently Asked Questions">Часто задаваемые вопросы</h1>
+        
+        <!-- search -->
+        <div class="faq-search-container">
+            <input type="text" id="faqSearch" placeholder="Введите вопрос или ключевое слово..." data-i18n-placeholder="Type your question or keyword...">
+            <i class="fas fa-search"></i>
+        </div>
+        
+        <!-- FAQ сcategories -->
+        <div class="faq-categories">
+            <div class="faq-category active" data-category="all">
+                <span data-i18n="All Questions">Все вопросы</span>
+            </div>
+            <div class="faq-category" data-category="courses">
+                <span data-i18n="Courses and Teachers">Курсы и преподаватели</span>
+            </div>
+            <div class="faq-category" data-category="learning">
+                <span data-i18n="Learning Format">Формат обучения</span>
+            </div>
+            <div class="faq-category" data-category="payment">
+                <span data-i18n="Payment and Technical">Оплата и технические вопросы</span>
+            </div>
+            <div class="faq-category" data-category="results">
+                <span data-i18n="Guarantees and Results">Гарантии и результаты</span>
+            </div>
+        </div>
+        
+        <!-- FAQ container -->
+        <div class="faq-container">
+            <!-- Category: cources and teachers -->
+            <div class="faq-category-section" data-category="courses">
+                <div class="category-header">
+                    <h2><i class="fas fa-graduation-cap"></i> <span data-i18n="Courses and Teachers">Курсы и преподаватели</span></h2>
+                    <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
+                </div>
+                
+                <div class="category-content">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span data-i18n="For what level of training are your courses suitable?">Для какого уровня подготовки подходят ваши курсы?</span>
+                            <div class="faq-icon"><i class="fas fa-plus"></i></div>
+                        </div>
+                        <div class="faq-answer">
+                            <p data-i18n="We have courses for all levels: from schoolchildren who are just starting to study mathematics in depth (for example, preparation for Olympiads) and students who want to improve the school curriculum (grades 5-11) to first-year students studying higher mathematics (mathematical analysis, linear algebra, etc.). Each course has a detailed description indicating the necessary initial knowledge.">У нас есть курсы для всех уровней: от школьников, которые только начинают углубленно изучать математику (например, подготовка к олимпиадам) и учащихся, желающих подтянуть школьную программу (5-11 класс), до студентов первых курсов, изучающих высшую математику (математический анализ, линейная алгебра и т.д.). К каждому курсу есть подробное описание с указанием необходимых начальных знаний.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span data-i18n="Who teaches the courses?">Кто преподает на курсах?</span>
+                            <div class="faq-icon"><i class="fas fa-plus"></i></div>
+                        </div>
+                        <div class="faq-answer">
+                            <p data-i18n="Our teachers are experienced teachers, graduates of leading universities (mechmat, fiztekh), candidates of sciences, as well as practicing tutors with confirmed experience in preparing for the Unified State Exam, the Main State Exam and Olympiads. On the course pages you can see detailed resumes and diplomas of teachers.">Наши преподаватели — это опытные педагоги, выпускники ведущих вузов (мехмат, физтех), кандидаты наук, а также практикующие репетиторы с подтвержденным опытом подготовки к ЕГЭ, ОГЭ и олимпиадам. На страницах курсов вы можете увидеть подробные резюме и дипломы преподавателей.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span data-i18n="How do your courses differ from school lessons or a tutor?">Чем ваши курсы отличаются от школьных уроков или репетитора?</span>
+                            <div class="faq-icon"><i class="fas fa-plus"></i></div>
+                        </div>
+                        <div class="faq-answer">
+                            <p data-i18n="Our courses are structured programs focused on specific goals (exam, Olympiad, complex topic). They combine the advantages of a systematic approach (as in school) and deep immersion (as with a tutor), but often at a more affordable price. We use interactive materials, an automated task checking system and provide recordings of all classes.">Наши курсы — это структурированные программы, сфокусированные на конкретных целях (экзамен, олимпиада, сложная тема). Они сочетают преимущества системного подхода (как в школе) и глубокого погружения (как у репетитора), но зачастую по более доступной цене. Мы используем интерактивные материалы, систему автоматической проверки задач и предоставляем записи всех занятий.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Category: education format -->
+            <div class="faq-category-section" data-category="learning">
+                <div class="category-header">
+                    <h2><i class="fas fa-laptop"></i> <span data-i18n="Learning Format">Формат обучения</span></h2>
+                    <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
+                </div>
+                
+                <div class="category-content">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span data-i18n="How are classes conducted?">Как проходят занятия?</span>
+                            <div class="faq-icon"><i class="fas fa-plus"></i></div>
+                        </div>
+                        <div class="faq-answer">
+                            <p data-i18n="Classes are held online in the format of live webinars with the ability to ask questions to the teacher in the chat or by voice. Each lesson is accompanied by a presentation, an interactive whiteboard and practical tasks. All classes are available in the recording in your personal account so that they can be reviewed at any time.">Занятия проходят <strong>онлайн</strong> в формате живых вебинаров с возможностью задавать вопросы преподавателю в чате или голосом. Каждый урок сопровождается презентацией, интерактивной доской и практическими заданиями. Все занятия доступны в <strong>записи</strong> в личном кабинете, чтобы их можно было пересмотреть в любое время.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span data-i18n="What happens if I miss a class?">Что будет, если я пропущу занятие?</span>
+                            <div class="faq-icon"><i class="fas fa-plus"></i></div>
+                        </div>
+                        <div class="faq-answer">
+                            <p data-i18n="No problem! All classes are automatically recorded and appear in your personal account within a few hours after the end of the broadcast. You can watch the recording at a convenient time.">Не проблема! Все занятия автоматически записываются и в течение нескольких часов после окончания эфира появляются в вашем личном кабинете. Вы можете посмотреть запись в удобное время.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span data-i18n="Will there be homework and feedback?">Будут ли домашние задания и обратная связь?</span>
+                            <div class="faq-icon"><i class="fas fa-plus"></i></div>
+                        </div>
+                        <div class="faq-answer">
+                            <p data-i18n="Yes, after each lesson you receive homework. Some tasks are checked automatically by our system, and for complex tasks there is a check by a teacher or curator with detailed comments. You can always ask a question about your homework in the general course chat.">Да, после каждого занятия вы получаете домашнее задание. Часть задач проверяется автоматически нашей системой, а для сложных задач предусмотрена <strong>проверка преподавателем или куратором</strong> с развернутыми комментариями. Вы всегда можете задать вопрос по ДЗ в общем чате курса.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Category: paying and tech quesions -->
+            <div class="faq-category-section" data-category="payment">
+                <div class="category-header">
+                    <h2><i class="fas fa-credit-card"></i> <span data-i18n="Payment and Technical">Оплата и технические вопросы</span></h2>
+                    <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
+                </div>
+                
+                <div class="category-content">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span data-i18n="How does payment happen? Is there an installment plan?">Как происходит оплата? Есть ли рассрочка?</span>
+                            <div class="faq-icon"><i class="fas fa-plus"></i></div>
+                        </div>
+                        <div class="faq-answer">
+                            <p data-i18n="You can pay for the course by card (Visa/Mastercard/Mir), through SBP or electronic wallets. For most long-term courses, we provide an interest-free installment plan from our partner banks. Detailed installment terms are indicated on the payment page.">Оплатить курс можно картой (Visa/Mastercard/Мир), через СБП или электронными кошельками. На большинство длительных курсов мы предоставляем <strong>беспроцентную рассрочку</strong> от наших партнеров-банков. Подробные условия рассрочки указаны на странице оплаты.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span data-i18n="What is technically needed for classes?">Что нужно технически для занятий?</span>
+                            <div class="faq-icon"><i class="fas fa-plus"></i></div>
+                        </div>
+                        <div class="faq-answer">
+                            <p data-i18n="You only need a computer, tablet or smartphone with stable Internet access to watch webinars. A browser is enough to complete tasks. There is no need to install special software. We recommend using a headset for better sound quality if you plan to ask questions by voice.">Вам нужен только компьютер, планшет или смартфон со стабильным доступом в интернет для просмотра вебинаров. Для выполнения заданий достаточно браузера. Специальное ПО устанавливать не требуется. Мы рекомендуем использовать гарнитуру для лучшего качества звука, если вы планируете задавать вопросы голосом.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Category: guarantees and results -->
+            <div class="faq-category-section" data-category="results">
+                <div class="category-header">
+                    <h2><i class="fas fa-medal"></i> <span data-i18n="Guarantees and Results">Гарантии и результаты</span></h2>
+                    <div class="toggle-icon"><i class="fas fa-chevron-down"></i></div>
+                </div>
+                
+                <div class="category-content">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span data-i18n="Is it possible to get a refund if the course doesn't suit me?">Можно ли вернуть деньги, если курс не подошел?</span>
+                            <div class="faq-icon"><i class="fas fa-plus"></i></div>
+                        </div>
+                        <div class="faq-answer">
+                            <p data-i18n="Yes, we provide a guaranteed refund within the first 7 days after the start of the course (or after the first lesson for short intensives) if you understand that the course does not meet your expectations. To do this, you need to write to our support team.">Да, мы предоставляем <strong>гарантированный возврат средств в течение первых 7 дней</strong> после начала курса (или после первого занятия для коротких интенсивов), если вы поймете, что курс не соответствует вашим ожиданиям. Для этого нужно написать в нашу поддержку.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span data-i18n="What result will I get after the course?">Какой результат я получу после курса?</span>
+                            <div class="faq-icon"><i class="fas fa-plus"></i></div>
+                        </div>
+                        <div class="faq-answer">
+                            <p data-i18n="The result depends on the goals of the course. For example, after a course to prepare for the Unified State Exam, you will systematize your knowledge, practice solving all types of exam tasks and increase your average score on practice tests. At the end of the course, you receive a certificate (if you have completed at least 80% of the tasks), which can be added to your portfolio.">Результат зависит от целей курса. Например, после курса по подготовке к ЕГЭ вы систематизируете знания, отработаете решение всех типов задач экзамена и повысите свой средний балл на пробных тестированиях. По окончании курса вы получаете <strong>сертификат</strong> (если выполнили не менее 80% заданий), который можно добавить в портфолио.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span data-i18n="Do you offer a trial lesson?">Даете ли вы пробный урок?</span>
+                            <div class="faq-icon"><i class="fas fa-plus"></i></div>
+                        </div>
+                        <div class="faq-answer">
+                            <p data-i18n="Yes! We regularly host free open lesson webinars on the most relevant topics. You can sign up for them on the main page of the site. Also, for some courses, the first paid lesson is available as a trial with the possibility of a refund if you don't like it.">Да! У нас регулярно проходят <strong>бесплатные открытые уроки</strong>-вебинары по самым актуальным темам. Записаться на них можно на главной странице сайта. Также для некоторых курсов доступен первый платный урок в качестве пробного с возможностью возврата, если он не понравится.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Help reference -->
+        <div class="support-link">
+          <p>
+            <span data-i18n="Didn't find an answer to your question?">Didn't find an answer to your question?</span> 
+            <a href='mailto:Mathjam_TechSupport@gmail.ru' data-i18n="Write to us">Write to us</a>
+            <span data-i18n="or call">or call</span>
+            <a href='#'>+7 900-000-00-00</a>
+          </p>
+        </div>
+    </main>
+    
+    <div id="footer"></div>
+    
+    <script src="js/header_and_footer.js"></script>
+    <script src="js/translator.js"></script>
+    <script src="js/faq.js"></script>
+</body>
+</html>

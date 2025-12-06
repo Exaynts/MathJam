@@ -23,13 +23,6 @@ body {
   margin-top: var(--header-height);
 }
 
-.main-content {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  padding: 20px;
-}
-
 h1,
 h2,
 h3,
