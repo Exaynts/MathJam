@@ -23,15 +23,15 @@ h2,
 h3,
 h4,
 p {
-  color: hsl(0, 0%, 0%);
+  color: rgb(0, 0, 0);
 }
 h1 {
-  margin: 0 0 80px;
   font-size: 64px;
 }
 
 /*main styles*/
 .main {
+  flex-direction: column;
   position: relative;
   margin-top: var(--header-height);
   padding: 20px 0 0;
@@ -54,7 +54,16 @@ h1 {
   background-size: contain;
 }
 
-.content-wrapper {
+.main h1:hover,
+.main h2:hover,
+.main p:hover,
+.main a:hover:not(.carousel-btn):not(.get-started a) {
+    transform: scale(1.02);
+    transition: transform 1.0s ease;
+    display: inline-block;
+}
+
+.intro-and-carousel {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -70,6 +79,7 @@ h1 {
   font-size: 40px;
   flex: 1;
   max-width: 90%;
+
 }
 .intro-text {
   padding-left: 0;
@@ -80,7 +90,7 @@ h1 {
   align-items: center;
   width: 700px;
   height: 250px;
-  margin-top: 20px;
+  margin-top: 80px;
   border: 2px solid #000;
   border-radius: 20px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
@@ -94,6 +104,9 @@ h1 {
   transition: all 0.2s ease;
   cursor: pointer;
   max-width: 100%;
+}
+.get-started a {
+  color: black;
 }
 .get-started:hover {
   background-color: #f88;
@@ -218,10 +231,142 @@ h1 {
   padding: 0 10px; /* Добавляем отступы по бокам */
 }
 
+/* ... предыдущие стили остаются без изменений ... */
+
+.advantages {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 60px auto 40px;
+  padding: 0 20px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.advantages h1 {
+  font-size: 64px;
+  margin-bottom: 20px;
+  color: #000;
+  position: relative;
+}
+
+.advantages h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 4px;
+  border-radius: 2px;
+}
+
+.advantages-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 3px solid #000;
+  border-radius: 25px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  padding: 0 25px;
+  width: 100%;
+  max-width: 1000px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+
+
+.advantages-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.advantages-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  list-style: none;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+}
+
+.advantages-list li {
+  position: relative;
+  padding-left: 35px;
+  line-height: 1.5;
+}
+
+.advantages-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #000;
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.advantages-list p {
+  color: #000000;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.6;
+  margin: 0;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+.advantages-list li:hover p {
+  color: #000;
+  transform: translateX(5px);
+}
+
+.advantages-list li:hover::before {
+  color: #f55;
+  transform: scale(1.2);
+}
+
 @media (max-width: 1350px) {
   .content-wrapper {
     flex-direction: column;
     align-items: center;
     gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .advantages {
+    margin: 40px auto 30px;
+    padding: 0 15px;
+  }
+  
+  .advantages h1 {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+  
+  .advantages-card {
+    padding: 30px 25px;
+    border-width: 2px;
+  }
+  
+  .advantages-list {
+    gap: 20px;
+  }
+  
+  .advantages-list li {
+    padding-left: 30px;
+  }
+  
+  .advantages-list p {
+    font-size: 18px;
+  }
+  
+  .advantages-list li::before {
+    font-size: 30px;
   }
 }
