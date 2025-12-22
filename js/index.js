@@ -68,4 +68,29 @@ document.addEventListener('DOMContentLoaded', function() {
         if (e.key === 'ArrowLeft') prevSlide();
         if (e.key === 'ArrowRight') nextSlide();
     });
+
+
+    // Слушаем сообщения от iframe
+    window.addEventListener('message', function(event) {
+        // Проверяем, что сообщение от нашего iframe
+        const iframe = document.querySelector('iframe');
+        if (!iframe || event.source !== iframe.contentWindow) return;
+        
+        if (event.data && event.data.type === 'languageChange') {
+            const newLang = event.data.language;
+            
+            // Меняем язык на главной странице
+            if (window.switchLanguage && newLang !== window.currentLanguage) {
+                window.switchLanguage(newLang);
+            }
+        }
+        
+        if (event.data && event.data.type === 'getCurrentLanguage') {
+            // Отправляем текущий язык в iframe
+            iframe.contentWindow.postMessage({
+                type: 'currentLanguage',
+                language: window.currentLanguage || 'en'
+            }, '*');
+        }
+    });
 });

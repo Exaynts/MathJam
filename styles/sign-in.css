@@ -45,6 +45,7 @@ h1 {
 }
 
 .data-form {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: fit-content;
@@ -53,6 +54,18 @@ h1 {
   padding: 30px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
   background-color: #f9f9f9;
+}
+.data-form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  z-index: 1;
+  height: 10px;
+  border-radius: 25px 25px 0 0;
+  background: linear-gradient(90deg, #f55, #ff8c8c, #f55);
 }
 
 .hidden {

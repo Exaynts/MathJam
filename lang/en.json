@@ -59,6 +59,7 @@
   "Male": "Male",
   "Math level": "Math level",
   "MathJam": "MathJam",
+  "More information can be found in the section": "More information can be found in the section",
   "More than 500": "More than 500",
   "My account": "My account",
   "My courses": "My courses",
@@ -67,6 +68,7 @@
   "News:": "News:",
   "Other": "Other",
   "Our Advantages": "Our Advantages",
+  "Our partners": "Our partners",
   "Password": "Password",
   "Phone number": "Phone number",
   "Price": "Price",
@@ -152,5 +154,16 @@
   "Yes! We regularly host free open lesson webinars on the most relevant topics. You can sign up for them on the main page of the site. Also, for some courses, the first paid lesson is available as a trial with the possibility of a refund if you don't like it.": "Yes! We regularly host free open lesson webinars on the most relevant topics. You can sign up for them on the main page of the site. Also, for some courses, the first paid lesson is available as a trial with the possibility of a refund if you don't like it.",
   "Didn't find an answer to your question?": "Didn't find an answer to your question?",
   "Write to us": "Write to us",
-  "or call": "or call"
+  "or call": "or call",
+
+  "reviews_title": "Our reviews",
+  "review_1_text": "MathJam completely changed my attitude towards mathematics. The lessons are so engaging and interactive that I actually look forward to studying now. The video explanations are crystal clear!",
+  "review_1_author": "Alex M.",
+  "review_1_rating": "★★★★★",
+  "review_2_text": "As a teacher, I recommend MathJam to all my students. The way complex topics are broken down into simple concepts is remarkable. My students' grades have improved by 40% since we started using this platform.",
+  "review_2_author": "Sarah K., Math Teacher",
+  "review_2_rating": "★★★★★",
+  "review_3_text": "I was struggling with calculus for months until I found MathJam. The practical assignments and step-by-step solutions helped me understand even the most difficult problems. The first free lesson convinced me to subscribe!",
+  "review_3_author": "Michael R.",
+  "review_3_rating": "★★★★☆"
 }

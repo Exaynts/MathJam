@@ -17,15 +17,15 @@ body {
 .main {
   display: flex;
   flex-direction: column;
-  align-items: center;
   flex: 1;
-  margin-top: var(--header-height);
-  padding: 40px 20px;
-  background-color: #fff;
+  align-items: center;
   width: 100%;
   max-width: 1200px;
-  margin-left: auto;
+  margin-top: var(--header-height);
   margin-right: auto;
+  margin-left: auto;
+  padding: 40px 20px;
+  background-color: #fff;
 }
 
 h1, h2, h3, h4, p {
@@ -33,30 +33,30 @@ h1, h2, h3, h4, p {
 }
 
 h1 {
+  width: 100%;
   margin-bottom: 50px;
+  color: #f55;
   font-size: clamp(40px, 6vw, 75px);
   text-align: center;
   white-space: normal;
-  color: #f55;
-  width: 100%;
 }
 
 h2 {
   margin-bottom: 20px;
-  font-size: clamp(30px, 4vw, 50px);
-  text-align: center;
-  color: #000;
   border-bottom: 3px solid #f88;
   padding-bottom: 15px;
+  color: #000;
+  font-size: clamp(30px, 4vw, 50px);
+  text-align: center;
 }
 
 h3 {
-  font-size: 28px;
   color: #f55;
   font-weight: 600;
-  white-space: normal;
+  font-size: 28px;
   word-wrap: break-word;
   hyphens: auto;
+  white-space: normal;
 }
 
 p {
@@ -65,13 +65,25 @@ p {
 
 /* Card Styles */
 .card {
+  position: relative;
+  width: 100%;
   margin-bottom: 60px;
-  padding: 40px;
   border: 2px solid #000;
   border-radius: 25px;
-  background-color: white;
+  padding: 40px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  width: 100%;
+  background-color: white;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  height: 10px;
+  border-radius: 25px 25px 0 0;
+  background: linear-gradient(90deg, #f55, #ff8c8c, #f55);
 }
 
 .card-grid {
@@ -82,9 +94,9 @@ p {
 }
 
 .card-item {
-  padding: 25px;
   border: 2px solid #ddd;
   border-radius: 20px;
+  padding: 25px;
   background-color: #f9f9f9;
   transition: all 0.5s ease;
 }
@@ -102,9 +114,9 @@ p {
 }
 
 .mission-statement {
-  font-size: 28px;
-  font-weight: 600;
   color: #000;
+  font-weight: 600;
+  font-size: 28px;
 }
 
 /* Responsive Design */
@@ -114,18 +126,18 @@ p {
   }
 
   .card {
-    padding: 25px;
     margin-bottom: 40px;
+    padding: 25px;
   }
 
   h1 {
-    font-size: clamp(32px, 8vw, 50px);
     margin-bottom: 30px;
+    font-size: clamp(32px, 8vw, 50px);
   }
 
   h2 {
-    font-size: clamp(26px, 5vw, 40px);
     margin-bottom: 20px;
+    font-size: clamp(26px, 5vw, 40px);
   }
 
   h3 {

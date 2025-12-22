@@ -22,7 +22,8 @@ h1,
 h2,
 h3,
 h4,
-p {
+p,
+span {
   color: rgb(0, 0, 0);
 }
 h1 {
@@ -58,9 +59,9 @@ h1 {
 .main h2:hover,
 .main p:hover,
 .main a:hover:not(.carousel-btn):not(.get-started a) {
-    transform: scale(1.02);
-    transition: transform 1.0s ease;
-    display: inline-block;
+  transform: scale(1.02);
+  transition: transform 1s ease;
+  display: inline-block;
 }
 
 .intro-and-carousel {
@@ -79,7 +80,9 @@ h1 {
   font-size: 40px;
   flex: 1;
   max-width: 90%;
-
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+  margin-right: 20px;
 }
 .intro-text {
   padding-left: 0;
@@ -91,7 +94,7 @@ h1 {
   width: 700px;
   height: 250px;
   margin-top: 80px;
-  border: 2px solid #000;
+  border: 4px solid #000;
   border-radius: 20px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
   color: #000;
@@ -105,7 +108,7 @@ h1 {
   cursor: pointer;
   max-width: 100%;
 }
-.get-started a {
+a {
   color: black;
 }
 .get-started:hover {
@@ -118,7 +121,6 @@ h1 {
   position: relative;
   width: 600px;
   height: 540px;
-  margin-top: 20px;
   max-width: 100%;
   flex-shrink: 0;
 }
@@ -127,10 +129,22 @@ h1 {
   position: relative;
   width: 100%;
   height: 100%;
-  border: 2px solid #000;
+  border: 4px solid #000;
   border-radius: 25px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
   overflow: hidden;
+}
+
+.carousel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: linear-gradient(90deg, #f55, #ff8c8c, #f55);
+  border-radius: 25px 25px 0 0;
+  z-index: 1;
 }
 
 .carousel-slides {
@@ -171,7 +185,7 @@ h1 {
   align-items: center;
   width: 50px;
   height: 50px;
-  border: 2px solid #000;
+  border: 4px solid #000;
   border-radius: 50%;
   color: #000;
   font-weight: bold;
@@ -208,7 +222,7 @@ h1 {
 .carousel-indicator {
   width: 12px;
   height: 12px;
-  border: 1px solid #000;
+  border: 2px solid #000;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.5);
   transition: all 0.5s ease;
@@ -228,47 +242,54 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 10px; /* Добавляем отступы по бокам */
+  padding: 0 10px;
 }
 
-/* ... предыдущие стили остаются без изменений ... */
+/* cources frame Styles */
+.iframe-cources {
+  display: flex;
+  justify-self: center;
+  width: 80%;
+  height: 600px;
+  border: 4px solid #000;
+  border-radius: 25px;
+}
 
-.advantages {
+/* Advantages and Reviews styles */
+.advantages,
+.reviews {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin: 60px auto 40px;
   padding: 0 20px;
   max-width: 1200px;
   width: 100%;
 }
 
-.advantages h1 {
-  font-size: 64px;
-  margin-bottom: 20px;
+.advantages {
+  margin: 60px auto 40px;
+}
+
+.reviews {
+  margin: 40px auto 80px;
+}
+
+.advantages h1,
+.reviews h2 {
+  font-size: 48px;
+  margin-bottom: 30px;
   color: #000;
   position: relative;
 }
 
-.advantages h1::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 150px;
-  height: 4px;
-  border-radius: 2px;
-}
-
-.advantages-card {
-  background-color: rgba(255, 255, 255, 0.9);
-  border: 3px solid #000;
+.advantages-card,
+.reviews-card {
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 4px solid #000;
   border-radius: 25px;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-  padding: 0 25px;
   width: 100%;
   max-width: 1000px;
   position: relative;
@@ -276,13 +297,33 @@ h1 {
   transition: all 0.3s ease;
 }
 
+.advantages-card::before,
+.reviews-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: linear-gradient(90deg, #f55, #ff8c8c, #f55);
+  border-radius: 25px 25px 0 0;
+}
 
+.advantages-card {
+  padding: 40px 50px;
+}
 
-.advantages-card:hover {
+.reviews-card {
+  padding: 50px;
+}
+
+.advantages-card:hover,
+.reviews-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
 }
 
+/* Advantages list styles */
 .advantages-list {
   display: flex;
   flex-direction: column;
@@ -295,12 +336,12 @@ h1 {
 
 .advantages-list li {
   position: relative;
-  padding-left: 35px;
+  padding-left: 30px;
   line-height: 1.5;
 }
 
 .advantages-list li::before {
-  content: '•';
+  content: "•";
   position: absolute;
   left: 0;
   top: 0;
@@ -310,63 +351,177 @@ h1 {
   line-height: 1;
 }
 
-.advantages-list p {
+.advantages-list span {
   color: #000000;
   font-size: 22px;
   font-weight: 500;
-  line-height: 1.6;
+  line-height: 1.5;
   margin: 0;
   padding: 5px 0;
-  transition: color 0.3s ease;
+  transition: all 1s ease;
 }
 
-.advantages-list li:hover p {
+.advantages-list li:hover span {
   color: #000;
   transform: translateX(5px);
 }
 
 .advantages-list li:hover::before {
   color: #f55;
-  transform: scale(1.2);
+  transform: scale(1.05);
 }
 
-@media (max-width: 1350px) {
-  .content-wrapper {
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-  }
+.advantages-list a:hover {
+  color: #f55;
 }
 
+/* Reviews list styles */
+.reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.review-item {
+  background-color: rgba(249, 249, 249, 0.8);
+  border: 2px solid #000000;
+  border-radius: 20px;
+  padding: 25px 30px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.review-item:hover {
+  border-color: #f55;
+  transform: scale(1.02);
+  box-shadow: 0 8px 16px rgba(245, 85, 85, 0.1);
+}
+
+.review-text {
+  color: #000000;
+  font-size: 20px;
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  text-align: left;
+  position: relative;
+  padding-left: 25px;
+}
+
+.review-text::before {
+  content: '"';
+  position: absolute;
+  left: 0;
+  top: -5px;
+  color: #f55;
+  font-size: 32px;
+  font-weight: bold;
+  font-family: serif;
+}
+
+.review-author {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  color: #000;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: right;
+}
+
+.review-rating {
+  color: #ffd700;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+/* Адаптивность для advantages и reviews */
 @media (max-width: 768px) {
-  .advantages {
+  .advantages,
+  .reviews {
     margin: 40px auto 30px;
     padding: 0 15px;
   }
-  
-  .advantages h1 {
+
+  .advantages h1,
+  .reviews h2 {
     font-size: 36px;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
   }
-  
-  .advantages-card {
+
+  .advantages-card,
+  .reviews-card {
     padding: 30px 25px;
     border-width: 2px;
   }
-  
+
   .advantages-list {
     gap: 20px;
   }
-  
+
   .advantages-list li {
     padding-left: 30px;
   }
-  
-  .advantages-list p {
+
+  .advantages-list span {
     font-size: 18px;
   }
-  
+
   .advantages-list li::before {
     font-size: 30px;
+  }
+
+  .reviews-list {
+    gap: 25px;
+  }
+
+  .review-item {
+    padding: 20px;
+  }
+
+  .review-text {
+    font-size: 18px;
+    padding-left: 20px;
+  }
+
+  .review-text::before {
+    font-size: 28px;
+  }
+
+  .review-author {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .advantages h1,
+  .reviews h2 {
+    font-size: 28px;
+  }
+
+  .advantages-card,
+  .reviews-card {
+    padding: 25px 20px;
+  }
+
+  .advantages-list span {
+    font-size: 16px;
+  }
+
+  .advantages-list li::before {
+    font-size: 26px;
+  }
+
+  .review-text {
+    font-size: 16px;
+    padding-left: 18px;
+  }
+
+  .review-text::before {
+    font-size: 24px;
   }
 }
