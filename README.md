@@ -1,5 +1,4 @@
 # MathJam
-Alt-H1
 ------ 
 ## What is the MathJam?
 This is a tutorial project to create your first multi-page website
