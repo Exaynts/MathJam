@@ -1,15 +1,20 @@
-// frontend/src/components/common/Header.jsx
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import NotificationsDropdown from './NotificationsDropdown';
 import './Header.css';
 
-const Header = () => {
+/**
+ * Отрисовать главное навигационное меню приложения.
+ */
+const Header = (): React.JSX.Element => {
     const { isAuthenticated, user, logout } = useAuth();
     const navigate = useNavigate();
 
-    const handleLogout = () => {
+    /**
+     * Выполнить выход пользователя из системы и перенаправить на главную.
+     */
+    const handleLogout = (): void => {
         logout();
         navigate('/');
     };
