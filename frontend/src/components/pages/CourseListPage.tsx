@@ -1,44 +1,48 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import api from '../../services/api';
-import CourseCard from '../../components/courses/CourseCard';
-import CourseFilters from '../../components/courses/CourseFilters';
+import CourseCard from '../courses/CourseCard';
+import CourseFilters from '../courses/CourseFilters';
+import { Course } from '../../types';
 import styles from '../../styles/pages/CourseListPage.module.css';
 
 const PAGE_SIZE = 5;
 
-const CourseListPage = () => {
+/**
+ * Отрисовать страницу со списком и фильтрацией курсов.
+ */
+const CourseListPage = (): React.JSX.Element => {
     // Общие состояния
-    const [courses, setCourses] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
-    const [searchTerm, setSearchTerm] = useState('');
+    const [courses, setCourses] = useState<Course[]>([]);
+    const [loading, setLoading] = useState<boolean>(false);
+    const [error, setError] = useState<string | null>(null);
+    const [searchTerm, setSearchTerm] = useState<string>('');
 
     // Состояния фильтров
-    const [selectedCategories, setSelectedCategories] = useState([]);
-    const [priceMin, setPriceMin] = useState('');
-    const [priceMax, setPriceMax] = useState('');
-    const [hasDiscount, setHasDiscount] = useState(false);
-    const [ratingMin, setRatingMin] = useState('');
-    const [ratingMax, setRatingMax] = useState('');
-    const [sortBy, setSortBy] = useState('');
+    const [selectedCategories, setSelectedCategories] = useState<number[]>([]);
+    const [priceMin, setPriceMin] = useState<string>('');
+    const [priceMax, setPriceMax] = useState<string>('');
+    const [hasDiscount, setHasDiscount] = useState<boolean>(false);
+    const [ratingMin, setRatingMin] = useState<string>('');
+    const [ratingMax, setRatingMax] = useState<string>('');
+    const [sortBy, setSortBy] = useState<string>('');
 
     // Состояния пагинации
-    const [currentPage, setCurrentPage] = useState(1);
-    const [totalPages, setTotalPages] = useState(1);
-    const [hasMore, setHasMore] = useState(false);
-    const [nextPageUrl, setNextPageUrl] = useState(null);
+    const [currentPage, setCurrentPage] = useState<number>(1);
+    const [totalPages, setTotalPages] = useState<number>(1);
 
-    // Сбросить пагинацию
-    const resetPagination = () => {
+    /**
+     * Сбросить пагинацию.
+     */
+    const resetPagination = (): void => {
         setCourses([]);
         setCurrentPage(1);
         setTotalPages(1);
-        setHasMore(false);
-        setNextPageUrl(null);
     };
 
-    // Загрузить курсы (append – добавить, false – заменить)
-    const loadCourses = useCallback(async (page = 1, append = false) => {
+    /**
+     * Загрузить курсы (append – добавить, false – заменить).
+     */
+    const loadCourses = useCallback(async (page: number = 1, append: boolean = false): Promise<void> => {
         setLoading(true);
         try {
             const params = new URLSearchParams();
@@ -59,17 +63,15 @@ const CourseListPage = () => {
             else if (sortBy === 'newest') ordering = '-created_at';
             if (ordering) params.append('ordering', ordering);
 
-            params.append('page', page);
-            params.append('page_size', PAGE_SIZE);
+            params.append('page', page.toString());
+            params.append('page_size', PAGE_SIZE.toString());
 
-            const response = await api.get(`/courses/?${params.toString()}`);
-            const data = response.data.results || response.data;
-            const count = response.data.count || data.length;
+            const response = await api.get<{ results: Course[], count: number }>(`/courses/?${params.toString()}`);
+            const data = response.data.results;
+            const count = response.data.count;
             const total = Math.ceil(count / PAGE_SIZE);
 
             setTotalPages(total);
-            setHasMore(page < total);
-            setNextPageUrl(response.data.next);
 
             if (append) {
                 setCourses(prev => [...prev, ...data]);
@@ -77,39 +79,44 @@ const CourseListPage = () => {
                 setCourses(data);
             }
             setError(null);
-        } catch (err) {
+        } catch (err: any) {
             console.error(err);
             setError('Failed to load courses');
             setCourses([]);
-            setHasMore(false);
         } finally {
             setLoading(false);
         }
     }, [searchTerm, priceMin, priceMax, hasDiscount, ratingMin, ratingMax, selectedCategories, sortBy]);
 
-    // Применить фильтры и поиск (сбросить пагинацию, загрузить первую страницу)
-    const performFiltering = useCallback(() => {
+    /**
+     * Применить фильтры и поиск.
+     */
+    const performFiltering = useCallback((): void => {
         resetPagination();
         loadCourses(1, false);
     }, [loadCourses]);
 
-    // Обработчики фильтров
-    const handleCategoryChange = useCallback((categoryId) => {
+    /**
+     * Обработать изменение выбранных категорий.
+     */
+    const handleCategoryChange = useCallback((categoryId: number): void => {
         setSelectedCategories(prev =>
             prev.includes(categoryId) ? prev.filter(id => id !== categoryId) : [...prev, categoryId]
         );
     }, []);
 
-    const handleSearchSubmit = (e) => {
+    /**
+     * Обработать отправку формы поиска.
+     */
+    const handleSearchSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
         e.preventDefault();
         performFiltering();
     };
 
-    const applyFilters = () => {
-        performFiltering();
-    };
-
-    const resetFilters = () => {
+    /**
+     * Сбросить все фильтры.
+     */
+    const resetFilters = (): void => {
         setSelectedCategories([]);
         setPriceMin('');
         setPriceMax('');
@@ -121,15 +128,19 @@ const CourseListPage = () => {
         performFiltering();
     };
 
-    // Переключиться на определённую страницу (заменить список)
-    const goToPage = (page) => {
+    /**
+     * Переключиться на определённую страницу.
+     */
+    const goToPage = (page: number): void => {
         if (page < 1 || page > totalPages) return;
         setCurrentPage(page);
         loadCourses(page, false);
     };
 
-    // Загрузить следующую страницу (добавить курсы к уже загруженным)
-    const loadMore = () => {
+    /**
+     * Загрузить следующую страницу (кнопка "Load more").
+     */
+    const loadMore = (): void => {
         const nextPage = currentPage + 1;
         if (nextPage <= totalPages) {
             setCurrentPage(nextPage);
@@ -137,27 +148,33 @@ const CourseListPage = () => {
         }
     };
 
-    // Сбросить пагинацию и загрузить первую страницу при изменении фильтров или поиска
+    // Сбросить пагинацию и загрузить первую страницу при изменении фильтров
     useEffect(() => {
         performFiltering();
-    }, [searchTerm, priceMin, priceMax, hasDiscount, ratingMin, ratingMax, selectedCategories, sortBy]);
+    }, [searchTerm, priceMin, priceMax, hasDiscount, ratingMin, ratingMax, selectedCategories, sortBy, performFiltering]);
 
     // Загрузить курсы изначально
     useEffect(() => {
         loadCourses(1, false);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    // Создать кнопки пагинации
-    const renderPagination = () => {
+    /**
+     * Отрисовать блок с кнопками пагинации.
+     */
+    const renderPagination = (): React.JSX.Element | null => {
         if (totalPages <= 1) return null;
         const maxVisible = 5;
         let start = Math.max(1, currentPage - Math.floor(maxVisible / 2));
         let end = Math.min(totalPages, start + maxVisible - 1);
+
         if (end - start + 1 < maxVisible) {
             start = Math.max(1, end - maxVisible + 1);
         }
+
         const pages = [];
         for (let i = start; i <= end; i++) pages.push(i);
+
         return (
             <div className={styles.pagination}>
                 <button onClick={() => goToPage(currentPage - 1)} disabled={currentPage === 1} className={styles.pageButton}>
@@ -195,7 +212,7 @@ const CourseListPage = () => {
                 onRatingMaxChange={setRatingMax}
                 onSortChange={setSortBy}
                 onResetFilters={resetFilters}
-                onApplyFilters={applyFilters}
+                onApplyFilters={performFiltering}
             />
             <div className={styles.content}>
                 <div className={styles.searchBar}>
@@ -204,7 +221,7 @@ const CourseListPage = () => {
                             type="text"
                             placeholder="Search courses..."
                             value={searchTerm}
-                            onChange={(e) => setSearchTerm(e.target.value)}
+                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchTerm(e.target.value)}
                             className={styles.searchInput}
                         />
                         <button type="submit" className={styles.searchBtn}>🔍</button>

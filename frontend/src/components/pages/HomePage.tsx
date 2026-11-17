@@ -2,17 +2,20 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styles from '../../styles/pages/HomePage.module.css';
 
-const HomePage = () => {
-    const [currentSlide, setCurrentSlide] = useState(0);
-    const totalSlides = 3;
+/**
+ * Отрисовать главную страницу с каруселью и преимуществами.
+ */
+const HomePage = (): React.JSX.Element => {
+    const [currentSlide, setCurrentSlide] = useState<number>(0);
+    const totalSlides: number = 3;
 
-    const images = [
+    const images: string[] = [
         '/images/index/image1.PNG',
         '/images/index/image2.PNG',
         '/images/index/image3.PNG'
     ];
 
-    const descriptions = [
+    const descriptions: string[] = [
         'Our average rate is 4.8',
         'More than 800 people have studied with us',
         'The result is noticed even after two weeks of learning'
@@ -25,21 +28,30 @@ const HomePage = () => {
         return () => clearInterval(interval);
     }, []);
 
-    const goToPrevSlide = () => {
+    /**
+     * Переключить на предыдущий слайд.
+     */
+    const goToPrevSlide = (): void => {
         setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
     };
 
-    const goToNextSlide = () => {
+    /**
+     * Переключить на следующий слайд.
+     */
+    const goToNextSlide = (): void => {
         setCurrentSlide((prev) => (prev + 1) % totalSlides);
     };
 
-    const goToSlide = (index) => {
+    /**
+     * Перейти к конкретному слайду по индексу.
+     */
+    const goToSlide = (index: number): void => {
         setCurrentSlide(index);
     };
 
     return (
         <>
-            {/* Intro and Carousel Section */}
+            {/* Секция интро и карусели */}
             <div className={styles.introAndCarousel}>
                 <div className={styles.introBlock}>
                     <h2>Learn with MathJam!</h2>
@@ -54,7 +66,7 @@ const HomePage = () => {
                     </div>
                 </div>
 
-                {/* Carousel */}
+                {/* Карусель */}
                 <div className={styles.carouselContainer}>
                     <div className={styles.carousel}>
                         <div
@@ -101,48 +113,37 @@ const HomePage = () => {
                 </div>
             </div>
 
-            {/* Info block */}
+            {/* Блок с информацией */}
             <div className={styles.infoBlock}>
-                <p> MathJam is a website for online mathematics courses for children and students.
-                </p>
+                <p> MathJam is a website for online mathematics courses for children and students.</p>
             </div>
 
-            {/* Advantages Section */}
+            {/* Секция преимуществ */}
             <div className={styles.advantages}>
                 <div className={styles.advantagesCard}>
                     <h2>What can we give</h2>
                     <ul className={styles.advantagesList}>
                         <li>
-                            <span>
-                                We have a specially prepared database of video lessons and practical assignments
-                            </span>
+                            <span>We have a specially prepared database of video lessons and practical assignments</span>
                         </li>
                         <li>
-                            <span>
-                                A system that allows you to fully unlock learning potential by choosing the right topic for each lesson
-                            </span>
+                            <span>A system that allows you to fully unlock learning potential by choosing the right topic for each lesson</span>
                         </li>
                         <li>
-                            <span>
-                                We also learn better than working through long school textbooks
-                            </span>
+                            <span>We also learn better than working through long school textbooks</span>
                         </li>
                         <li>
-                            <span>
-                                We break down complex concepts into simple ones and analyze them individually for a complete understanding of the material
-                            </span>
+                            <span>We break down complex concepts into simple ones and analyze them individually for a complete understanding of the material</span>
                         </li>
                         <li>
                             <span>More information can be found in the section </span>
-                            <span>
-                                <Link to="/aboutUs">About us</Link>
-                            </span>
+                            <span><Link to="/aboutUs">About us</Link></span>
                         </li>
                     </ul>
                 </div>
             </div>
 
-            {/* Reviews Section */}
+            {/* Секция отзывов */}
             <div className={styles.reviews}>
                 <div className={styles.reviewsCard}>
                     <h2>Our reviews</h2>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 
@@ -11,9 +11,6 @@ import './components/common/Footer.css';
 // Компоненты
 import Header from './components/common/Header';
 import Footer from './components/common/Footer';
-import CourseCard from './components/courses/CourseCard';
-
-import CourseFilters from './components/courses/CourseFilters';
 
 // Страницы
 import HomePage from './components/pages/HomePage';
@@ -35,8 +32,15 @@ import RecycleBinPage from './components/pages/RecycleBinPage';
 import SavedCoursesPage from './components/pages/SavedCoursesPage';
 import TermsAndConditionsPage from './components/pages/TermsAndConditionsPage';
 
-// Компонент-обёртка для страниц с Header и Footer
-const PageWrapper = ({ children }) => {
+// Описать пропсы для обёртки страниц
+interface PageWrapperProps {
+    children: ReactNode;
+}
+
+/**
+ * Отрисовать обёртку для страниц с Header и Footer.
+ */
+const PageWrapper = ({ children }: PageWrapperProps): React.JSX.Element => {
     return (
         <>
             <Header />
@@ -48,8 +52,10 @@ const PageWrapper = ({ children }) => {
     );
 };
 
-// Компонент защищённого маршрута (только авторизованные)
-const ProtectedRoute = ({ children }) => {
+/**
+ * Отрисовать защищённый маршрут (только авторизованные).
+ */
+const ProtectedRoute = ({ children }: PageWrapperProps): React.JSX.Element => {
     const { isAuthenticated, loading } = useAuth();
 
     if (loading) {
@@ -60,11 +66,13 @@ const ProtectedRoute = ({ children }) => {
             </div>
         );
     }
-    return isAuthenticated ? children : <Navigate to="/login" replace />;
+    return isAuthenticated ? <>{children}</> : <Navigate to="/login" replace />;
 };
 
-// Компонент публичного маршрута (редирект на главную, если уже авторизован)
-const PublicRoute = ({ children }) => {
+/**
+ * Отрисовать публичный маршрут (редирект на главную, если уже авторизован).
+ */
+const PublicRoute = ({ children }: PageWrapperProps): React.JSX.Element => {
     const { isAuthenticated, loading } = useAuth();
 
     if (loading) {
@@ -75,11 +83,13 @@ const PublicRoute = ({ children }) => {
             </div>
         );
     }
-    return !isAuthenticated ? children : <Navigate to="/" replace />;
+    return !isAuthenticated ? <>{children}</> : <Navigate to="/" replace />;
 };
 
-// Основной компонент с маршрутами
-function AppRoutes() {
+/**
+ * Отрисовать основные маршруты приложения.
+ */
+function AppRoutes(): React.JSX.Element {
     return (
         <Routes>
             <Route path="/" element={<PageWrapper><HomePage /></PageWrapper>} />
@@ -147,7 +157,10 @@ function AppRoutes() {
     );
 }
 
-function App() {
+/**
+ * Отрисовать корневой компонент приложения.
+ */
+function App(): React.JSX.Element {
     return (
         <BrowserRouter>
             <AuthProvider>

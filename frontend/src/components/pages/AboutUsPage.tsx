@@ -1,12 +1,15 @@
 import React from 'react';
 import styles from '../../styles/pages/AboutUsPage.module.css';
 
-const AboutPage = () => {
+/**
+ * Отрисовать страницу с информацией о компании.
+ */
+const AboutPage = (): React.JSX.Element => {
     return (
          <div className={styles.aboutContainer}>
             <h1>About us</h1>
 
-            {/* Our Mission Section */}
+            {/* Секция миссии */}
             <section className={styles.card}>
                 <h2>Our mission</h2>
                 <p className={styles.missionStatement}>
@@ -15,7 +18,7 @@ const AboutPage = () => {
                 </p>
             </section>
 
-            {/* What can we give? Section */}
+            {/* Секция что мы даем */}
             <section className={styles.card}>
                 <h2>What can we give?</h2>
                 <div className={styles.cardGrid}>
@@ -38,7 +41,7 @@ const AboutPage = () => {
                 </div>
             </section>
 
-            {/* Our Methods Section */}
+            {/* Секция методов */}
             <section className={styles.card}>
                 <h2>Our methods</h2>
                 <div className={styles.cardGrid}>
@@ -61,7 +64,7 @@ const AboutPage = () => {
                 </div>
             </section>
 
-            {/* Our Values Section */}
+            {/* Секция ценностей */}
             <section className={styles.card}>
                 <h2>Our values</h2>
                 <div className={styles.cardGrid}>
@@ -80,7 +83,7 @@ const AboutPage = () => {
                 </div>
             </section>
 
-            {/* Our Partners Section */}
+            {/* Секция партнеров */}
             <section className={styles.card}>
                 <h2>Our partners</h2>
                 <div className={styles.cardGrid}>
