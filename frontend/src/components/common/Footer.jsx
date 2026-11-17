@@ -32,7 +32,8 @@ const Footer = () => {
                     <ul>
                         <li>Email: <a href="mailto:info@mathjam.com">info@mathjam.com</a></li>
                         <li>Phone: <a href="tel:+79000000000">+7 900 000-00-00</a></li>
-                        <li>Telegram: <a href="https://t.me/mathjam_support">@mathjam_support</a></li>
+                        {/*<li>Telegram: <a href="https://t.me/mathjam_support">@mathjam_support</a></li> */}
+                        <li>VK: <a href="https://vk.ru/mathjam_dev">@mathjam_dev</a></li>
                     </ul>
                 </div>
             </div>

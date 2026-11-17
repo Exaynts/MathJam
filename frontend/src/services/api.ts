@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { Course, User } from '../types';
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000/api';
 
@@ -80,3 +81,7 @@ export const markNotificationRead = (id) =>
 
 export const markAllNotificationsRead = () =>
   api.post('/notifications/mark_all_read/').then(res => res.data);
+
+export const fetchCourses = (params?: Record<string, unknown>): Promise<{ results: Course[] }> =>
+    api.get('/courses/', { params }).then(res => res.data);
+
