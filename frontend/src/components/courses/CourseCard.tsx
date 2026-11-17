@@ -1,8 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './CourseCard.module.css';
+import { Course } from '../../types';
 
-const CourseCard = ({ course }) => {
+interface CourseCardProps {
+    course: Course;
+}
+
+const CourseCard = ({ course }: CourseCardProps) => {
     const discountedPrice = course.discounted_price || course.price;
     const hasDiscount = course.discount && course.discount > 0;
 

@@ -456,31 +456,31 @@ const ProfilePage = () => {
                             <Link to="/saved-courses" className={styles.navCard}>
                                 <div className={styles.navIcon}>★</div>
                                 <div className={styles.navTitle}>Saved</div>
-                                <div className={styles.navHint}>Избранные курсы</div>
+                                <div className={styles.navHint}>Save the course if you plan to buy it later</div>
                             </Link>
 
                             <Link to="/purchased-courses" className={styles.navCard}>
                                 <div className={styles.navIcon}>📘</div>
                                 <div className={styles.navTitle}>Purchased</div>
-                                <div className={styles.navHint}>Купленные курсы</div>
+                                <div className={styles.navHint}>Continue taking the courses you have</div>
                             </Link>
 
                             <Link to="/recycle-bin" className={styles.navCard}>
                                 <div className={styles.navIcon}>🗑</div>
                                 <div className={styles.navTitle}>Recycle Bin</div>
-                                <div className={styles.navHint}>Удалённые курсы</div>
+                                <div className={styles.navHint}>Restore the course if you have changed your mind about deleting it permanently</div>
                             </Link>
 
                             <Link to="/created-courses" className={styles.navCard}>
                                 <div className={styles.navIcon}>✎</div>
                                 <div className={styles.navTitle}>Created</div>
-                                <div className={styles.navHint}>Созданные курсы</div>
+                                <div className={styles.navHint}>Admire your creations or try to improve them</div>
                             </Link>
 
                             <Link to="/create-course" className={`${styles.navCard} ${styles.navCardPrimary}`}>
                                 <div className={styles.navIcon}>+</div>
                                 <div className={styles.navTitle}>Create Course</div>
-                                <div className={styles.navHint}>Создать новый курс</div>
+                                <div className={styles.navHint}>Contribute to the development of the course catalog on the platform!</div>
                             </Link>
                         </div>
                     </div>
